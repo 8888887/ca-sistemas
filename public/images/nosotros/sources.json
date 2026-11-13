@@ -1,0 +1,17 @@
+{
+  "page": "/nosotros",
+  "source": "Diez imágenes PNG originales adjuntadas por el usuario; sin modificaciones.",
+  "assets": [
+    { "file": "equipo-ca-sistemas.png", "purpose": "Fotografía principal del equipo" },
+    { "file": "soporte-capacitacion.png", "purpose": "Galería de servicios para recursos humanos" },
+    { "file": "equipo-oficina.png", "purpose": "Galería de servicios para recursos humanos" },
+    { "file": "asesoria-equipo.png", "purpose": "Galería de servicios para recursos humanos" },
+    { "file": "innovacion.png", "purpose": "Icono del valor innovación" },
+    { "file": "responsabilidad.png", "purpose": "Icono del valor responsabilidad" },
+    { "file": "auditoria-laboral.png", "purpose": "Icono de auditoría laboral" },
+    { "file": "hr-analytics.png", "purpose": "Icono de HR Analytics" },
+    { "file": "ley-30709.png", "purpose": "Icono de implementación de la Ley 30709" },
+    { "file": "payroll.png", "purpose": "Icono del servicio de Payroll" }
+  ],
+  "additionalIcons": "Los iconos no adjuntados se representan con vectores del sistema compartido de iconos."
+}

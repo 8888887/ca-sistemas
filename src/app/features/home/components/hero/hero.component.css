@@ -1,0 +1,28 @@
+.hero { padding: 155px 0 40px; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 40px; align-items: center; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; padding: 3px 13px; border: 2px solid white; border-radius: 30px; font-size: 13.6px; font-weight: 600; }
+.er-mark { font-size: 20px; font-weight: 800; line-height: 1; letter-spacing: -3px; padding-right: 3px; }
+h1 { margin: 0; font-size: 52.59px; line-height: 1.04; font-weight: 800; letter-spacing: -.9px; }
+h1 span { color: #61cce9; }
+.hero-description { margin: 24px 0 32px; font-size: 13.28px; font-weight: 500; line-height: 1.65; text-align: justify; }
+.hero-actions { display: flex; gap: 26px; }
+.hero-actions .button { min-width: 190px; font-size: 12.48px; min-height: 40px; }
+.hero-visual { position: relative; margin-inline: 5px 18px; }
+.hero-photo { width: 100%; aspect-ratio: 1.25; height: auto; object-fit: cover; border-radius: 20px; }
+.trust-badge { position: absolute; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 7px; border-radius: 14px; background: #fff; color: #034467; box-shadow: 0 3px 3px #0005; font-size: 9.6px; line-height: 1.15; }
+.badge-icon { display: grid; place-items: center; color: #fff; background: #0756ed; width: 30px; height: 30px; border-radius: 999px; }
+.badge-icon app-icon { width: 22px; height: 22px; }
+.security { left: -42px; top: 10%; }
+.security-label { max-width: 64px; font-weight: 700; }
+.speed { top: 8%; right: 20%; }
+.speed .badge-icon { background: #e4b000; }
+.compliance { right: -36px; bottom: 5%; }
+.compliance .badge-icon { background: #5bdf00; font-size: 8.8px; font-weight: 800; }
+.trust-strip { background: #fff; padding: 18px 20px 21px; font-size: 28.8px; text-align: center; color: #003766; line-height: 1.35; }
+@media (max-width: 1000px) { .hero-grid { gap: 30px; } .hero-actions { gap: 16px; } .hero-actions .button { min-width: 0; flex: 1; padding-inline: 14px; } }
+@media (max-width: 1200px) { h1 { font-size: 44px; } .trust-strip { font-size: 26px; } }
+@media (max-width: 1000px) { h1 { font-size: 36px; } }
+@media (max-width: 760px) { .hero { padding-top: 125px; } .hero-grid { grid-template-columns: 1fr; gap: 35px; } h1 { font-size: 51.2px; } .hero-description { max-width: 600px; text-align: left; } .hero-visual { width: min(450px, 90%); margin: 0 auto; } .security { left: -18px; } .compliance { right: -18px; } .eyebrow { font-size: 11.68px; } .hero-actions { max-width: 470px; } }
+@media (max-width: 760px) { .trust-strip { font-size: 20px; } }
+@media (max-width: 600px) { h1 { font-size: 40.8px; } .trust-strip { font-size: 16px; } }
+@media (max-width: 480px) { h1 { font-size: 32px; } }

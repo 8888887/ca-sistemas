@@ -1,0 +1,5 @@
+<article>
+  <div [class]="'purpose-symbol ' + purpose().tone"><app-icon [name]="purpose().icon" /></div>
+  <h3>{{ purpose().title | translate }}</h3>
+  <p>@for (part of purpose().copy; track $index) {@if (part.strong) {<strong>{{ part.text | translate }}</strong>} @else {{{ part.text | translate }}}}</p>
+</article>

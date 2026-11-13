@@ -1,0 +1,41 @@
+:host { display: block; }
+.mega-menu { display: grid; grid-template-columns: 26.2% 30.3% 43.5%; overflow: hidden; color: var(--navy); background: white; border-radius: 18px; box-shadow: 0 16px 45px #001c3e26; padding: 4px 0; font-size: 19.4px; font-weight: 700; line-height: 1.55; }
+.mega-menu.is-platform { grid-template-columns: 26.2% 73.8%; min-height: 420px; }
+.mega-menu.is-hr { min-height: 420px; }
+.menu-column { padding: 24px 14px; min-width: 0; }
+.menu-column + .menu-column { border-left: 2px solid #e1e1e1; }
+.categories { display: flex; flex-direction: column; gap: 30px; }
+.service-groups { padding-inline: 38px 14px; }
+.platform-links { padding-left: 32px; }
+.service-links { padding-inline: 14px; }
+.menu-row { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 52px; padding: 10px 16px; text-align: left; font: inherit; color: inherit; border: 0; border-radius: 9px; background: transparent; text-decoration: none; cursor: pointer; }
+.menu-row span { min-width: 0; }
+.menu-row .chevron { width: 16px; margin-left: auto; }
+.categories app-icon, .service-groups app-icon { width: 22px; }
+.service-groups .chevron { opacity: 0; }
+.service-groups .selected .chevron, .service-groups .menu-row:hover .chevron { opacity: 1; }
+.payroll span { max-width: 340px; }
+.selected, .menu-row:hover, .current { background: #eaf4fa; }
+.menu-row:focus-visible { outline: 2px solid var(--cyan); outline-offset: -2px; background: #eaf4fa; }
+.categories .menu-row { padding-left: 16px; gap: 10px; }
+.service-groups .menu-row { padding-inline: 16px 10px; gap: 10px; }
+@media (min-width: 1200px) { .service-links .menu-row { gap: 22px; } }
+@media (max-width: 1050px) and (min-width: 961px) { .menu-row { gap: 10px; padding-inline: 10px; } .service-groups { padding-left: 16px; } .service-links { padding-right: 14px; } .categories .menu-row { padding-left: 12px; } }
+@media (min-width: 961px) and (max-width: 1200px) { .mega-menu { font-size: 16px; } }
+@media (min-width: 961px) and (max-width: 1050px) { .mega-menu { font-size: 14px; } }
+@media (max-width: 960px) {
+  .mega-menu, .mega-menu.is-platform { display: flex; flex-direction: column; min-height: 0; font-size: 15.2px; max-height: 540px; overflow-y: auto; border-radius: 16px; }
+  .mega-menu.is-hr { min-height: 0; }
+  .menu-column { padding: 12px; }
+  .categories { flex-direction: row; gap: 5px; padding-bottom: 12px; }
+  .categories .menu-row { width: 50%; padding: 10px; gap: 8px; font-size: 13.12px; }
+  .categories .chevron { display: none; }
+  .menu-column + .menu-column { border-left: 0; border-top: 1px solid #e1e1e1; }
+  .service-groups { padding: 10px 12px; }
+  .service-links, .platform-links { padding: 8px 12px 16px; }
+  .menu-row { gap: 14px; min-height: 48px; padding: 10px 14px; }
+  app-icon { width: 21px; height: 21px; }
+}
+@media (max-width: 960px) and (max-height: 760px) { .mega-menu, .mega-menu.is-platform { max-height: 360px; } }
+@media (max-width: 960px) and (max-height: 600px) { .mega-menu, .mega-menu.is-platform { max-height: 240px; } }
+@media (max-width: 960px) and (max-height: 450px) { .mega-menu, .mega-menu.is-platform { max-height: 140px; } }

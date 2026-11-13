@@ -1,0 +1,37 @@
+:host { position: absolute; inset: 0 0 auto; z-index: 50; display: block; }
+.header-shell { width: min(1372px, calc(100% - 40px)); margin: 30px auto 0; position: relative; }
+.header-bar { display: flex; align-items: center; gap: 40px; min-height: 76px; padding: 12px 48px; background: #fff; border-radius: 25px; box-shadow: 0 4px 10px #001d3d12; }
+.brand-link { display: inline-flex; flex-shrink: 0; }
+.primary-nav { display: flex; align-items: center; gap: 36px; flex: 1; min-width: 0; }
+.header-actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+.nav-link { display: inline-flex; align-items: center; gap: 8px; color: var(--navy); font-size: 16.2px; font-weight: 750; background: none; border: 0; padding: 10px 4px; text-decoration: none; cursor: pointer; }
+.nav-link:hover, .nav-link.active { color: #008fb9; }
+.nav-link app-icon { width: 15px; height: 15px; transition: transform .2s; }
+.active app-icon { transform: rotate(180deg); }
+.countries { display: inline-flex; white-space: nowrap; gap: 6px; }
+.flag { position: relative; width: 22px; height: 22px; border-radius: 999px; overflow: hidden; }
+.peru { background: linear-gradient(90deg,#d91e35 33%,white 33% 67%,#d91e35 67%); }
+.chile { background: linear-gradient(white 50%,#d91e35 50%); }
+.chile::before { content: '★'; position: absolute; top: 0; left: 0; width: 11px; height: 11px; color: white; background: #1645a0; font-size: 8px; text-align: center; }
+.colombia { background: linear-gradient(#f8cf14 50%,#1842a0 50% 75%,#d91e35 75%); }
+.usa { background: repeating-linear-gradient(#d91e35 0 1.8px,white 1.8px 3.6px); }
+.usa::before { content: ''; position: absolute; left: 0; top: 0; width: 11px; height: 11px; background: #1645a0; }
+.meeting-link { display: inline-flex; justify-content: center; align-items: center; gap: 7px; padding: 8px 14px; color: white; background: linear-gradient(100deg,#00acd9,#007db8); border-radius: 24px; font-size: 13.6px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.meeting-link app-icon { width: 18px; height: 18px; }
+app-floating-menu { position: absolute; top: calc(100% + 14px); left: 0; width: 100%; }
+.mobile-toggle { display: none; }
+.skip-link { position: fixed; top: -100px; left: 20px; padding: 10px 20px; background: white; border-radius: 8px; z-index: 100; }
+.skip-link:focus { top: 5px; }
+@media (max-width: 1100px) { .header-bar { gap: 24px; padding-inline: 28px; } .primary-nav { gap: 16px; } .countries { display: none; } }
+@media (max-width: 960px) {
+  .header-shell { width: calc(100% - 28px); margin-top: 16px; }
+  .header-bar { min-height: 68px; padding: 12px 20px; border-radius: 20px; justify-content: space-between; flex-wrap: wrap; gap: 0; }
+  .mobile-toggle { display: grid; place-items: center; background: none; border: 0; color: var(--navy); padding: 8px; cursor: pointer; }
+  .primary-nav { display: none; width: 100%; flex-basis: 100%; padding: 16px 0 6px; gap: 8px 18px; flex-wrap: wrap; }
+  .primary-nav.mobile-open { display: flex; }
+  .nav-link { font-size: 15.4px; }
+  .countries { display: inline-flex; }
+  .header-actions { width: 100%; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .meeting-link { width: 100%; margin-top: 6px; }
+  app-floating-menu { top: calc(100% + 8px); }
+}

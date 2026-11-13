@@ -1,0 +1,24 @@
+<a class="skip-link" href="#main-content">{{ 'Saltar al contenido' | translate }}</a>
+<header class="header-shell">
+  <div class="header-bar">
+    <a routerLink="/" class="brand-link" [attr.aria-label]="'CA Sistemas, inicio' | translate"><app-brand-logo /></a>
+    <button class="mobile-toggle" type="button" [attr.aria-label]="'Abrir navegación' | translate" [attr.aria-expanded]="mobileOpen()" aria-controls="primary-navigation" (click)="toggleMobile()">
+      <app-icon [name]="mobileOpen() ? 'close' : 'menu'" />
+    </button>
+    <nav id="primary-navigation" class="primary-nav" [class.mobile-open]="mobileOpen()" [attr.aria-label]="'Navegación principal' | translate">
+      <button #solutionsTrigger class="nav-link solutions-trigger" type="button" [class.active]="menuOpen()" [attr.aria-expanded]="menuOpen()" aria-controls="solutions-menu" (click)="toggleMenu()" (keydown.arrowdown)="openMenu($event)">
+        {{ 'Soluciones' | translate }} <app-icon name="down" />
+      </button>
+      <a class="nav-link" routerLink="/nosotros">{{ 'Nosotros' | translate }}</a>
+      <a class="nav-link" routerLink="/blog">Blog</a>
+      <div class="header-actions">
+        <span class="countries" [attr.aria-label]="'Perú, Chile, Colombia y Estados Unidos' | translate"><span class="flag peru"></span><span class="flag chile"></span><span class="flag colombia"></span><span class="flag usa"></span></span>
+        <app-language-switcher />
+        <a class="meeting-link" [href]="contact.whatsapp" target="_blank" rel="noopener noreferrer"><app-icon name="whatsapp" />{{ 'Agenda una reunión' | translate }}</a>
+      </div>
+    </nav>
+  </div>
+  @if (menuOpen()) {
+    <app-floating-menu id="solutions-menu" (navigated)="closeMenu()" />
+  }
+</header>

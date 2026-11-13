@@ -1,0 +1,11 @@
+{
+  "page": "/soluciones/gestion-del-talento-humano",
+  "source": "Original PNG images provided by the user in the conversation",
+  "processing": "None. Original files retained.",
+  "assets": [
+    { "file": "plataforma-talento.png", "purpose": "Talent Management platform preview" },
+    { "file": "seleccion-incorporacion.png", "purpose": "Recruitment and onboarding" },
+    { "file": "evaluacion-desempeno.png", "purpose": "Performance evaluation" },
+    { "file": "reportes-desarrollo.png", "purpose": "Reporting and talent development" }
+  ]
+}

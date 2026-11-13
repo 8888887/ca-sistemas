@@ -1,0 +1,19 @@
+:host { display: block; }
+.meeting-cta { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 48px; align-items: center; padding: 38px 44px; border-radius: 22px; }
+h2 { margin: 0 0 22px; font-size: 34px; font-weight: 750; line-height: 1.06; letter-spacing: -.5px; }
+.meeting-copy > p { margin: 0; font-size: 16px; line-height: 1.65; text-align: justify; }
+form { display: flex; flex-direction: column; gap: 10px; min-width: 0; max-width: 220px; }
+.meeting-field { position: relative; }
+.meeting-field input, select { display: block; width: 100%; min-width: 0; min-height: 30px; padding: 6px 12px; border: 1px solid transparent; border-radius: 20px; background: white; color: var(--navy); font-size: 11px; line-height: 1.5; }
+.meeting-field input::placeholder { color: #737373; }
+select { appearance: none; padding-right: 30px; cursor: pointer; }
+.select-field app-icon { position: absolute; top: 7px; right: 10px; width: 18px; height: 18px; pointer-events: none; color: var(--navy); }
+.permission-label { display: flex; align-items: flex-start; gap: 7px; font-size: 10px; line-height: 1.5; cursor: pointer; }
+.permission-label input { width: 14px; height: 14px; margin: 0; flex-shrink: 0; accent-color: var(--cyan); }
+.button { align-self: flex-start; min-height: 30px; padding: 4px 12px; font-size: 13px; white-space: normal; }
+.meeting-note { margin: 0; color: #c4e9f8; font-size: 10px; line-height: 1.5; }
+.field-error { display: block; color: #ffdfc7; font-size: 10px; line-height: 1.5; }
+.field-error:empty { display: none; }
+[aria-invalid='true'] { border-color: #ffb99f; outline-color: #ffb99f; }
+@media (max-width: 1000px) { .meeting-cta { padding: 34px; gap: 30px; } h2 { font-size: 30px; } }
+@media (max-width: 760px) { .meeting-cta { grid-template-columns: minmax(0,1fr); padding: 30px 24px; gap: 26px; } h2 { font-size: 28px; } form { max-width: none; } .meeting-copy > p { font-size: 14px; text-align: left; } .meeting-field input, select { min-height: 40px; font-size: 12px; } .select-field app-icon { top: 11px; } .permission-label { font-size: 11px; } .button { min-height: 40px; } }

@@ -1,0 +1,13 @@
+<section class="solution-hero dark-band">
+  <div class="container">
+    <a routerLink="/" class="back-link">{{ 'Inicio / Soluciones' | translate }}</a>
+    <app-icon [name]="solution().icon" />
+    <h1>{{ solution().label | translate }}</h1>
+    <p>{{ solution().description | translate }}</p>
+    <a class="button" href="#consulta">{{ 'Conversemos sobre tu empresa' | translate }} <app-icon name="arrow" /></a>
+  </div>
+</section>
+<section id="consulta" class="container solution-contact">
+  <div><h2>{{ 'Una solución para' | translate }}<br><span>{{ 'tu empresa' | translate }}</span></h2><p>{{ 'Cuéntanos qué necesitas y nuestro equipo te ayudará a conocer esta solución.' | translate }}</p><a routerLink="/">{{ 'Volver al inicio' | translate }}</a></div>
+  <app-contact-form [whatsappUrl]="contact.whatsapp" />
+</section>

@@ -1,0 +1,12 @@
+<div class="video-frame">
+  @if (playing()) {
+    <iframe [src]="source()" [title]="title()" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+  } @else {
+    <button type="button" class="video-preview" [attr.aria-label]="('Reproducir:' | translate) + ' ' + title()" (click)="playing.set(true)">
+      <img [src]="'/images/video-' + videoId() + '.jpg'" [alt]="title()" width="480" height="270" loading="lazy">
+      <span class="video-label">{{ title() }}</span>
+      <span class="play-button"><app-icon name="play" /></span>
+      <span class="youtube-label">YouTube</span>
+    </button>
+  }
+</div>

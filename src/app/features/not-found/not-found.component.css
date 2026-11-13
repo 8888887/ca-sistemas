@@ -1,0 +1,4 @@
+.not-found { padding: 170px 0 85px; min-height: 585px; text-align: center; }
+p { margin: 0; font-weight: 800; font-size: 80px; color: #63d5f7; }
+h1 { font-size: 40px; margin: 0 0 30px; }
+@media (max-width: 760px) { h1 { font-size: 27.2px; } .not-found { min-height: 480px; } }

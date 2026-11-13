@@ -1,0 +1,12 @@
+:host { display: block; }
+article { height: 100%; min-height: 284px; padding: 30px 20px 38px; border-radius: 22px; background: #102b5b; color: white; box-shadow: 0 5px 10px #0002; text-align: center; }
+.value-symbol { display: grid; place-items: center; width: 54px; height: 54px; margin: 0 auto 22px; border-radius: 50%; }
+.value-symbol img { width: 54px; height: 54px; }
+.value-symbol app-icon { width: 36px; height: 36px; }
+.orange { background: #eb7c0b; }
+.green { background: #2ab793; }
+.pink { background: #de3b8d; }
+.blue { background: #0059e9; }
+h3 { display: grid; place-items: center; min-height: 54px; margin: 0 0 22px; font-size: 20px; line-height: 1.25; }
+p { margin: 0; font-size: 13px; line-height: 1.6; }
+@media (max-width: 760px) { article { padding: 26px 18px; } }

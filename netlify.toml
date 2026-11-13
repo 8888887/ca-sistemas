@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist/ca-sistemas/browser"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Let Angular resolve direct links and page refreshes, while serving real files normally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

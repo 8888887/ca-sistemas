@@ -1,0 +1,35 @@
+<nav class="mega-menu" [attr.aria-label]="'Soluciones' | translate" [class.is-platform]="category() === 'platform'" [class.is-hr]="category() === 'services' && groupId() === 'recursos-humanos'">
+  <div class="menu-column categories" [attr.aria-label]="'Categorías' | translate">
+    <button type="button" class="menu-row" [class.selected]="category() === 'platform'" [attr.aria-expanded]="category() === 'platform'" aria-controls="platform-panel" (mouseenter)="selectCategory('platform')" (click)="selectCategory('platform')">
+      <app-icon name="platform" /><span>{{ 'Plataforma' | translate }}</span><app-icon name="arrow" class="chevron" />
+    </button>
+    <button type="button" class="menu-row" [class.selected]="category() === 'services'" [attr.aria-expanded]="category() === 'services'" aria-controls="services-panel" (mouseenter)="selectCategory('services')" (click)="selectCategory('services')">
+      <app-icon name="services" /><span>{{ 'Servicios Adicionales' | translate }}</span><app-icon name="arrow" class="chevron" />
+    </button>
+  </div>
+
+  @if (category() === 'platform') {
+    <div id="platform-panel" class="menu-column platform-links" [attr.aria-label]="'Plataforma' | translate">
+      @for (item of platform; track item.slug) {
+        <a class="menu-row" [routerLink]="['/soluciones', item.slug]" routerLinkActive="current" (click)="navigated.emit()">
+          <app-icon [name]="item.icon" /><span>{{ item.label | translate }}</span>
+        </a>
+      }
+    </div>
+  } @else {
+    <div id="services-panel" class="menu-column service-groups" [attr.aria-label]="'Servicios adicionales' | translate">
+      @for (group of groups; track group.id) {
+        <button type="button" class="menu-row" [class.selected]="groupId() === group.id" [attr.aria-expanded]="groupId() === group.id" aria-controls="service-items" (mouseenter)="selectGroup(group.id)" (click)="selectGroup(group.id)">
+          <app-icon [name]="group.icon" /><span>{{ group.label | translate }}</span><app-icon name="arrow" class="chevron" />
+        </button>
+      }
+    </div>
+    <div id="service-items" class="menu-column service-links" [attr.aria-label]="activeGroup().label | translate">
+      @for (item of activeGroup().items; track item.slug) {
+        <a class="menu-row" [class.payroll]="item.slug === 'payroll'" [routerLink]="['/soluciones', item.slug]" routerLinkActive="current" (click)="navigated.emit()">
+          <app-icon [name]="item.icon" /><span>{{ item.label | translate }}</span>
+        </a>
+      }
+    </div>
+  }
+</nav>

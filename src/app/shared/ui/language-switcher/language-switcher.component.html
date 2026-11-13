@@ -1,0 +1,8 @@
+<label class="sr-only" for="site-language">{{ 'Idioma' | translate }}</label>
+<div class="select-wrapper">
+  <select id="site-language" [value]="language.language()" (change)="changeLanguage($event)">
+    <option value="es" lang="es">Español</option>
+    <option value="en" lang="en">English</option>
+  </select>
+  <app-icon name="down" />
+</div>

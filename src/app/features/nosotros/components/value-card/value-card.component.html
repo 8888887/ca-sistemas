@@ -1,0 +1,8 @@
+<article>
+  <div [class]="'value-symbol ' + (value().tone ?? '')">
+    @if (value().image; as image) {<img [src]="'/images/nosotros/' + image" alt="" width="54" height="54" loading="lazy">}
+    @else if (value().icon; as icon) {<app-icon [name]="icon" />}
+  </div>
+  <h3>{{ value().title | translate }}</h3>
+  <p>@for (part of value().copy; track $index) {@if (part.strong) {<strong>{{ part.text | translate }}</strong>} @else {{{ part.text | translate }}}}</p>
+</article>

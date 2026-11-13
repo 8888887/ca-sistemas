@@ -1,0 +1,10 @@
+{
+  "page": "/soluciones/hostigamiento-laboral-y-sexual",
+  "source": "Imágenes PNG originales adjuntadas por el usuario para esta pantalla; sin modificaciones.",
+  "assets": [
+    { "file": "plataforma-hostigamiento.png", "purpose": "Vista del módulo en la cabecera" },
+    { "file": "prevencion-cumplimiento.png", "purpose": "Prevención y seguimiento del cumplimiento" },
+    { "file": "registro-incidentes.png", "purpose": "Registro de incidentes y protocolos de respuesta" },
+    { "file": "capacitacion-equipo.png", "purpose": "Capacitación continua para el equipo" }
+  ]
+}

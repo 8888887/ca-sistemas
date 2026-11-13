@@ -1,0 +1,12 @@
+{
+  "page": "/soluciones/salud-y-seguridad-ocupacional",
+  "source": "Original PNG images provided by the user in the conversation",
+  "processing": "None. Original files retained.",
+  "assets": [
+    { "file": "plataforma-salud-seguridad.png", "purpose": "Platform preview" },
+    { "file": "identificacion-de-riesgos.png", "purpose": "Workplace risk identification" },
+    { "file": "registro-de-incidentes.png", "purpose": "Incident recording and trend analysis" },
+    { "file": "capacitacion-seguridad.png", "purpose": "Employee safety training" },
+    { "file": "integracion-planillas-asistencia.png", "purpose": "Integration with payroll and attendance" }
+  ]
+}

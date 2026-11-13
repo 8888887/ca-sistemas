@@ -1,0 +1,9 @@
+:host { display: block; }
+h2 { margin: 0 0 var(--faq-heading-gap, 30px); color: var(--navy); text-align: center; font-size: 34px; line-height: 1.2; font-weight: 750; }
+details { margin-bottom: var(--faq-item-gap, 28px); }
+summary { display: flex; align-items: flex-start; gap: 9px; color: var(--navy); font-size: 16px; font-weight: 700; line-height: 1.6; list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+summary app-icon { width: 24px; height: 24px; margin-top: 1px; transition: transform .18s; }
+details:not([open]) summary app-icon { transform: rotate(-90deg); }
+p { margin: 16px 0 0 33px; color: var(--faq-answer-color, #506d87); font-size: 16px; line-height: 1.7; text-align: justify; }
+@media (max-width: 760px) { h2 { font-size: 28px; } summary { font-size: 14px; } p { margin-left: 0; font-size: 14px; text-align: left; } }

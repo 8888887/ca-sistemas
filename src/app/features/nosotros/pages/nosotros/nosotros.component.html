@@ -1,0 +1,38 @@
+<section class="about-hero" aria-labelledby="about-title">
+  <h1 id="about-title">{{ 'Más de 20 años impulsando' | translate }}<br> {{ 'la eficiencia de' | translate }} <span>{{ 'tu empresa' | translate }}</span></h1>
+  <img class="hero-image" [src]="assets + 'equipo-ca-sistemas.png'" [alt]="'Equipo de CA Sistemas Empresariales' | translate" width="1043" height="594" fetchpriority="high">
+</section>
+
+<section class="story" aria-labelledby="story-title">
+  <div class="story-copy">
+    <h2 id="story-title" class="section-title">{{ 'Comprometidos con' | translate }} <span>{{ 'Recursos Humanos' | translate }}</span></h2>
+    <p><strong>CASISTEMAS</strong> {{ history | translate }}</p>
+  </div>
+  <div class="purpose-grid">
+    @for (purpose of purposes; track purpose.title) {<app-purpose-card [purpose]="purpose" />}
+  </div>
+</section>
+
+<section class="team-section" aria-labelledby="team-title">
+  <h2 id="team-title" class="section-title">{{ 'Servicios para' | translate }} <span>{{ 'Áreas de RR.HH.' | translate }}</span></h2>
+  <div class="team-gallery">
+    @for (image of teamImages; track image.file) {
+      <img [src]="assets + image.file" [alt]="image.alt | translate" width="251" height="335" loading="lazy">
+    }
+  </div>
+  <div class="team-copy">
+    <p>{{ experience | translate }}</p>
+    <p>{{ differentiators | translate }}</p>
+  </div>
+</section>
+
+<section class="values-grid" [attr.aria-label]="'Nuestros valores' | translate">
+  @for (value of values; track value.title) {<app-value-card [value]="value" />}
+</section>
+
+<section class="additional-services" aria-labelledby="about-services-title">
+  <h2 id="about-services-title" class="section-title"><span>{{ 'Servicios adicionales' | translate }}</span></h2>
+  <div class="services-grid">
+    @for (service of services; track service.slug) {<app-about-service-card [service]="service" />}
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="contact-card">
+  <h2>{{ 'Cuéntanos' | translate }} <span>{{ 'tu necesidad' | translate }}</span><br>{{ 'y nosotros te ayudamos...' | translate }}</h2>
+  <span class="send-icon"><app-icon name="send" /></span>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field-row">
+      <div class="field">
+        <label class="sr-only" for="contact-name">{{ 'Nombres' | translate }}</label>
+        <input id="contact-name" formControlName="name" [placeholder]="'Nombres' | translate" autocomplete="name" maxlength="100" required [attr.aria-invalid]="invalid('name')" aria-describedby="name-error">
+        <span id="name-error" class="error">@if (invalid('name')) { {{ 'Ingresa tu nombre.' | translate }} }</span>
+      </div>
+      <div class="field">
+        <label class="sr-only" for="contact-phone">{{ 'Celular' | translate }}</label>
+        <input id="contact-phone" formControlName="phone" type="tel" [placeholder]="'Celular' | translate" autocomplete="tel" maxlength="20" required [attr.aria-invalid]="invalid('phone')" aria-describedby="phone-error">
+        <span id="phone-error" class="error">@if (invalid('phone')) { {{ 'Ingresa un celular válido.' | translate }} }</span>
+      </div>
+    </div>
+    <div class="field">
+      <label class="sr-only" for="contact-company">{{ 'Empresa' | translate }}</label>
+      <input id="contact-company" formControlName="company" [placeholder]="'Empresa' | translate" autocomplete="organization" maxlength="150" required [attr.aria-invalid]="invalid('company')" aria-describedby="company-error">
+      <span id="company-error" class="error">@if (invalid('company')) { {{ 'Ingresa tu empresa.' | translate }} }</span>
+    </div>
+    <div class="field">
+      <label class="sr-only" for="contact-message">{{ '¿Qué proceso deseas automatizar?' | translate }}</label>
+      <textarea id="contact-message" formControlName="message" [placeholder]="'¿Qué proceso deseas automatizar?' | translate" rows="4" maxlength="1500" required [attr.aria-invalid]="invalid('message')" aria-describedby="message-error"></textarea>
+      <span id="message-error" class="error">@if (invalid('message')) { {{ 'Cuéntanos qué necesitas.' | translate }} }</span>
+    </div>
+    <button type="submit" class="button button-gradient">{{ 'Enviar' | translate }}</button>
+    <p class="form-note" role="status">{{ (prepared() ? 'Tu consulta está lista. Confirma el envío en WhatsApp.' : 'Al enviar, continuarás en WhatsApp.') | translate }}</p>
+  </form>
+</div>

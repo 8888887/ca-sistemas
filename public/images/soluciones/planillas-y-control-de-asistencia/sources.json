@@ -1,0 +1,29 @@
+{
+  "page": "/soluciones/planillas-y-control-de-asistencia",
+  "assets": [
+    {
+      "file": "attendance-table.png",
+      "source": "Original image provided by the user in the conversation",
+      "processing": "None. Original PNG retained.",
+      "width": 648,
+      "height": 364
+    },
+    {
+      "file": "payroll-preview.webp",
+      "source": "https://casistemas.com/wp-content/uploads/2024/09/Group-471.png",
+      "processing": "Cropped to the application screen and converted to WebP."
+    },
+    {
+      "file": "attendance-management.webp",
+      "source": "Generated with the built-in imagegen tool",
+      "processing": "Resized and converted to WebP.",
+      "prompt_document": "docs/assets/planillas-y-control-de-asistencia.md"
+    },
+    {
+      "file": "reporting-team.webp",
+      "source": "Generated with the built-in imagegen tool",
+      "processing": "Resized and converted to WebP.",
+      "prompt_document": "docs/assets/planillas-y-control-de-asistencia.md"
+    }
+  ]
+}

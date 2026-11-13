@@ -1,0 +1,9 @@
+<section class="faq-section" [attr.aria-label]="title() | translate">
+  <h2>{{ title() | translate }}</h2>
+  @for (item of items(); track item.question) {
+    <details open>
+      <summary><app-icon name="down" /><span>{{ item.question | translate }}</span></summary>
+      <p>{{ item.answer | translate }}</p>
+    </details>
+  }
+</section>

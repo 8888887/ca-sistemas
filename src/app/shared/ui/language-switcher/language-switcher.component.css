@@ -1,0 +1,18 @@
+:host { display: inline-block; width: 94px; flex-shrink: 0; }
+.select-wrapper { position: relative; }
+select {
+  display: block;
+  appearance: none;
+  width: 100%;
+  min-height: 29px;
+  padding: 3px 28px 3px 11px;
+  border: 1px solid var(--navy);
+  border-radius: 18px;
+  color: var(--navy);
+  background: white;
+  font-size: 11.68px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+select:hover { background: #f2f8fc; }
+app-icon { position: absolute; top: calc(50% - 8px); right: 9px; width: 16px; height: 16px; color: var(--navy); pointer-events: none; }

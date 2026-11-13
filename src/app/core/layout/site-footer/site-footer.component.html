@@ -1,0 +1,31 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="contact-column">
+      <a routerLink="/" [attr.aria-label]="'CA Sistemas, inicio' | translate"><app-brand-logo [light]="true" /></a>
+      <a [href]="'tel:' + contact.phone">{{ contact.phoneLabel }}</a>
+      <a [href]="'mailto:' + contact.email">{{ contact.email }}</a>
+      @for (address of contact.addresses; track address) { <p>{{ address }}</p> }
+    </div>
+    <div class="footer-column">
+      <h2>{{ 'Productos' | translate }}</h2>
+      @for (item of products; track item.slug) { <a [routerLink]="['/soluciones', item.slug]">{{ item.label | translate }}</a> }
+    </div>
+    <div class="footer-column">
+      <h2>{{ 'Servicios' | translate }}</h2>
+      @for (item of services; track item.slug) { <a [routerLink]="['/soluciones', item.slug]">{{ item.label | translate }}</a> }
+    </div>
+    <div class="footer-column company-column">
+      <h2>{{ 'La empresa' | translate }}</h2>
+      <a routerLink="/nosotros">{{ 'Nosotros' | translate }}</a>
+      <a routerLink="/" fragment="contacto">{{ 'Contactos' | translate }}</a>
+      <a [href]="'mailto:' + contact.email + '?subject=Trabaja%20con%20nosotros'">{{ 'Trabaja con nosotros' | translate }}</a>
+      <h2 class="social-title">{{ 'Redes' | translate }}</h2>
+      <div class="social-links">
+        @for (social of contact.social; track social.label) { <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.label">{{ social.text }}</a> }
+      </div>
+    </div>
+    <p class="footer-tagline">{{ 'El mejor' | translate }} <span>Software</span> {{ 'para' | translate }}<br>{{ 'transformar' | translate }} <span>{{ 'tu negocio' | translate }}</span></p>
+  </div>
+  <div class="container copyright">© Copyright {{ year }} CA SISTEMAS - {{ 'Todos los derechos reservados' | translate }}</div>
+</footer>
+<a class="whatsapp-float" [href]="contact.whatsapp" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Conversa con CA Sistemas por WhatsApp' | translate"><app-icon name="whatsapp" /></a>

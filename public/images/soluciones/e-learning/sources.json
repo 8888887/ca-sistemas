@@ -1,0 +1,10 @@
+{
+  "page": "/soluciones/e-learning",
+  "source": "Imágenes PNG originales adjuntadas por el usuario para esta pantalla; sin modificaciones.",
+  "assets": [
+    { "file": "plataforma-elearning.png", "purpose": "Vista del portal del colaborador en la cabecera" },
+    { "file": "programas-capacitacion.png", "purpose": "Diseño de programas de capacitación" },
+    { "file": "rutas-aprendizaje.png", "purpose": "Contenidos y rutas de aprendizaje" },
+    { "file": "seguimiento-progreso.png", "purpose": "Seguimiento y evaluación del progreso" }
+  ]
+}

@@ -1,0 +1,30 @@
+<section class="safety-hero dark-band" aria-labelledby="safety-title">
+  <div class="safety-container">
+    <p class="module-label">{{ 'Salud y Seguridad Ocupacional' | translate }}</p>
+    <div class="safety-hero-content">
+      <div class="hero-copy">
+        <h1 id="safety-title"><span>{{ 'Simplifica' | translate }}</span> {{ 'la gestión de la seguridad y salud en el trabajo' | translate }}</h1>
+        <p>{{ 'Con' | translate }} <strong>Empresarial-RH</strong>{{ ', un software modular en la nube, puedes centralizar la información de tu organización y dar seguimiento a las acciones preventivas para reducir los riesgos laborales y proteger a tu equipo.' | translate }}</p>
+      </div>
+      <img class="platform-preview" [src]="assets + 'plataforma-salud-seguridad.png'" [alt]="'Vista de la plataforma de Seguridad y Salud Ocupacional de Empresarial-RH' | translate" width="417" height="244" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<div class="safety-container safety-body">
+  <div class="safety-features">
+    @for (feature of features; track feature.id; let position = $index) {
+      <section class="safety-feature" [class.is-reversed]="position % 2 === 1" [attr.aria-labelledby]="'safety-' + feature.id + '-title'">
+        <div class="feature-copy">
+          <h2 [id]="'safety-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
+          <p>{{ feature.description | translate }}</p>
+        </div>
+        <img [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
+      </section>
+    }
+  </div>
+
+  <app-faq-list class="safety-faq" [items]="questions" />
+
+  <app-meeting-request class="safety-meeting" [platforms]="platforms" [whatsappUrl]="contact.whatsapp" heading="Construye un entorno de trabajo más seguro" description="Conversemos sobre cómo Empresarial-RH puede ayudarte a gestionar la salud y la seguridad ocupacional en tu empresa." />
+</div>

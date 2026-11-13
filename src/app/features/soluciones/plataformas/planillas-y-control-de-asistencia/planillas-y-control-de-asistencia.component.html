@@ -1,0 +1,48 @@
+<section class="payroll-hero dark-band" aria-labelledby="payroll-title">
+  <div class="payroll-container">
+    <p class="module-label">{{ 'Planillas y Control de Asistencia' | translate }}</p>
+    <div class="hero-content">
+      <div class="hero-copy">
+        <h1 id="payroll-title"><span class="hero-title-accent">{{ 'Optimiza' | translate }}</span> {{ 'tus' | translate }}<br><span class="hero-title-detail">{{ 'procesos administrativos' | translate }}</span></h1>
+        <p>{{ 'El software modular y SaaS, te permite acceder a' | translate }} <strong>{{ 'funcionalidades avanzadas sin complicaciones' | translate }}</strong>{{ ', adaptándose a las necesidades específicas de tu organización.' | translate }}</p>
+      </div>
+      <img [src]="assets + 'payroll-preview.webp'" [alt]="'Vista del módulo Tipos de planilla de Empresarial-RH' | translate" width="954" height="542" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<div class="payroll-container payroll-body">
+  <section class="payroll-feature attendance-feature" aria-labelledby="attendance-title">
+    <div class="feature-copy">
+      <h2 id="attendance-title">{{ 'Cada horario cuenta,' | translate }}<br>{{ 'Cada registro también' | translate }}</h2>
+      <p>{{ 'Automatiza la captura de asistencia y lleva un control preciso de horarios, ausencias y horas extras. Reduce errores manuales y dedica más tiempo a la gestión de tu equipo.' | translate }}</p>
+      <ul class="feature-list">
+        @for (benefit of attendanceBenefits; track benefit) { <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li> }
+      </ul>
+    </div>
+    <img class="attendance-photo" [src]="assets + 'attendance-management.webp'" [alt]="'Profesional de recursos humanos revisando horarios y registros de asistencia' | translate" width="960" height="540" loading="lazy">
+  </section>
+
+  <section class="workflow-section" aria-labelledby="workflow-title">
+    <h2 id="workflow-title">{{ 'Todo comienza con información ordenada.' | translate }}</h2>
+    <p>{{ 'Explora cómo se conectan los procesos de tu gestión de recursos humanos' | translate }}</p>
+    <div class="workflow-card">
+      <img class="attendance-table" [src]="assets + 'attendance-table.png'" [alt]="'Vista de filtros y registros del módulo Control de asistencia de Empresarial-RH' | translate" width="648" height="364" loading="lazy">
+    </div>
+  </section>
+
+  <section class="payroll-feature reporting-feature" aria-labelledby="reporting-title">
+    <img class="reporting-photo" [src]="assets + 'reporting-team.webp'" [alt]="'Equipo analizando reportes de recursos humanos en una oficina' | translate" width="800" height="1000" loading="lazy">
+    <div class="feature-copy">
+      <h2 id="reporting-title">{{ 'Transforma tus datos' | translate }}<br>{{ 'en mejores decisiones' | translate }}</h2>
+      <p>{{ 'Integra el módulo con otros componentes de Empresarial-RH y obtén una visión más completa de tu gestión de recursos humanos. Personaliza reportes y análisis según las exigencias de tu negocio para tomar decisiones informadas y estratégicas.' | translate }}</p>
+      <ul class="feature-list">
+        @for (benefit of reportingBenefits; track benefit) { <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li> }
+      </ul>
+    </div>
+  </section>
+
+  <app-faq-list class="payroll-faq" [items]="questions" />
+
+  <app-meeting-request class="payroll-meeting" [platforms]="platforms" [whatsappUrl]="contact.whatsapp" heading="Una gestión más ordenada empieza aquí." description="Conversemos sobre tus procesos de planillas y asistencia y descubre cómo Empresarial-RH puede ayudarte." />
+</div>

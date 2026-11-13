@@ -1,0 +1,34 @@
+<section class="talent-hero dark-band" aria-labelledby="talent-title">
+  <div class="talent-container">
+    <p class="module-label">{{ 'Gestión del Talento Humano' | translate }}</p>
+    <div class="talent-hero-content">
+      <div class="hero-copy">
+        <h1 id="talent-title">{{ 'Gestiona' | translate }} <span>{{ 'talento' | translate }}</span> {{ 'de tu equipo desde la selección hasta su desarrollo' | translate }}</h1>
+        <p>{{ 'Con el módulo de Gestión de Talento de' | translate }} <strong>Empresarial-RH</strong>{{ ', organiza los procesos de tu equipo y orienta el desarrollo de cada colaborador hacia los objetivos de tu empresa.' | translate }}</p>
+      </div>
+      <img class="platform-preview" [src]="assets + 'plataforma-talento.png'" [alt]="'Vista del módulo Gestión de Talentos de Empresarial-RH' | translate" width="434" height="254" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<div class="talent-container talent-body">
+  <div class="talent-features">
+    @for (feature of features; track feature.id; let position = $index) {
+      <section class="talent-feature" [class.is-reversed]="position % 2 === 1" [attr.aria-labelledby]="'talent-' + feature.id + '-title'">
+        <div class="feature-copy">
+          <h2 [id]="'talent-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
+          <ul class="benefit-list">
+            @for (benefit of feature.benefits; track benefit) {
+              <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li>
+            }
+          </ul>
+        </div>
+        <img [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
+      </section>
+    }
+  </div>
+
+  <app-faq-list class="talent-faq" [items]="questions" />
+
+  <app-meeting-request class="talent-meeting" [platforms]="platforms" [whatsappUrl]="contact.whatsapp" heading="¿Quieres simplificar la gestión del talento en tu empresa?" description="Agenda una llamada con CA Sistemas y descubre cómo Empresarial-RH te ayuda a organizar la selección, la incorporación y la evaluación del desempeño de tu equipo." />
+</div>

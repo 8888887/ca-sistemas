@@ -1,0 +1,7 @@
+<a [routerLink]="['/soluciones', service().slug]">
+  <img [src]="'/images/nosotros/' + service().image" alt="" width="116" height="116" loading="lazy">
+  <div class="service-copy">
+    <h3>{{ service().title | translate }}</h3>
+    <p>{{ service().description | translate }}</p>
+  </div>
+</a>
