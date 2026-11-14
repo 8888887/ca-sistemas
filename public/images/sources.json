@@ -2,6 +2,11 @@
   "origin": "https://casistemas.com",
   "assets": [
     {
+      "file": "logo-header.svg",
+      "source": "Archivo CA SISTEMAS-LOGO WEB.svg proporcionado por el usuario para el logo de la cabecera.",
+      "processing": "Conservado sin modificaciones, incluido el PNG embebido en el SVG original."
+    },
+    {
       "file": "blog/planillas-y-asistencia.webp",
       "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
       "processing": "Extraída a un archivo local sin modificar los bytes originales."
