@@ -1,0 +1,43 @@
+<section class="analytics-hero dark-band" aria-labelledby="analytics-title">
+  <div class="analytics-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="analytics-title"><span>HR Analytics</span> {{ 'para empresas' | translate }}</h1>
+      <p class="hero-lead">{{ 'Entiende qué está pasando en tu equipo y anticipa dónde actuar.' | translate }}</p>
+      <p class="hero-description">{{ 'Con el módulo de Reportes e Inteligencia de Negocio de Empresarial-RH, visualiza tus indicadores de recursos humanos, identifica tendencias y toma decisiones basadas en datos.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'hr-analytics-empresas.png'" [alt]="'Profesionales analizando indicadores de recursos humanos en un panel de datos' | translate" width="412" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="analytics-overview-title">
+  <div class="analytics-container overview-grid">
+    <div class="feature-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="analytics-overview-title">{{ '¿En qué consiste el servicio?' | translate }}</h2>
+      <ul class="benefit-list">
+        @for (benefit of benefits; track benefit) {
+          <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li>
+        }
+      </ul>
+    </div>
+    <img class="feature-photo" appReveal="left" [src]="assets + 'indicadores-equipo.png'" [alt]="'Equipo revisando información e indicadores en una computadora portátil' | translate" width="475" height="261" loading="lazy">
+  </div>
+</section>
+
+@for (feature of features; track feature.id; let position = $index) {
+  <section class="analytics-feature-section" [class.is-reversed]="position % 2 === 0" [attr.aria-labelledby]="'analytics-' + feature.id + '-title'">
+    <div class="analytics-container analytics-feature">
+      <div class="feature-copy" [appReveal]="position % 2 === 0 ? 'left' : 'right'">
+        <h2 [id]="'analytics-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
+        <p>{{ feature.description | translate }}</p>
+      </div>
+      <img class="feature-photo" [appReveal]="position % 2 === 0 ? 'right' : 'left'" [appRevealDelay]="80" [src]="assets + feature.image" [alt]="feature.imageAlt | translate" [width]="feature.width" [height]="feature.height" loading="lazy">
+    </div>
+  </section>
+}
+
+<div class="analytics-closing">
+  <div class="analytics-container">
+    <app-faq-list class="analytics-faq" [items]="questions" />
+    <app-meeting-request class="analytics-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Descubre qué te dicen los datos de tu equipo" description="Conversa con CA Sistemas sobre los indicadores que necesitas seguir y cómo visualizarlos con Empresarial-RH." />
+  </div>
+</div>

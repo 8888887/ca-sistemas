@@ -1,0 +1,55 @@
+<section class="audit-hero dark-band" aria-labelledby="audit-title">
+  <div class="audit-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="audit-title"><span>{{ 'Auditoría Laboral' | translate }}</span><br>{{ 'para empresas' | translate }}</h1>
+      <p class="hero-lead">{{ 'Identifica brechas en tus obligaciones laborales y de seguridad y salud en el trabajo.' | translate }}</p>
+      <p class="hero-description">{{ 'En CA Sistemas evaluamos tus procesos y políticas para que sepas qué aspectos del cumplimiento laboral puedes fortalecer.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'auditoria-empresas.png'" [alt]="'Profesionales revisando documentos y políticas de una empresa' | translate" width="412" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<section class="review-section" aria-labelledby="review-title">
+  <div class="audit-container">
+    <h2 id="review-title" appReveal="left">{{ '¿Qué revisamos en tu' | translate }} <span>{{ 'empresa' | translate }}</span>?</h2>
+    <div class="review-grid">
+      @for (area of reviewAreas; track area.title; let position = $index) {
+        <article class="review-card" [appReveal]="position === 2 ? 'right' : 'left'" [appRevealDelay]="position * 80">
+          <h3>{{ area.title | translate }}</h3>
+          <p>{{ area.description | translate }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="inspection-section" aria-labelledby="inspection-title">
+  <div class="audit-container inspection-grid">
+    <img class="inspection-photo" appReveal="left" [src]="assets + 'inspeccion-sunafil.png'" [alt]="'Inspector de SUNAFIL frente a una sede de la institución' | translate" width="475" height="261" loading="lazy">
+    <div class="section-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="inspection-title">{{ 'Prepárate para una inspección de SUNAFIL' | translate }}</h2>
+      <p>{{ 'Tomamos como referencia los protocolos de inspección de SUNAFIL para evaluar el nivel de cumplimiento e identificar brechas que podrían derivar en sanciones.' | translate }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="audit-benefits-title">
+  <div class="audit-container benefits-grid">
+    <div class="section-copy" appReveal="left">
+      <h2 id="audit-benefits-title">{{ '¿Qué gana tu empresa con una auditoría laboral?' | translate }}</h2>
+      <ul class="benefit-list">
+        @for (benefit of benefits; track benefit) {
+          <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li>
+        }
+      </ul>
+    </div>
+    <img class="benefits-photo" appReveal="right" [appRevealDelay]="80" [src]="assets + 'beneficios-auditoria.png'" [alt]="'Equipo analizando documentos y resultados de una auditoría laboral' | translate" width="316" height="289" loading="lazy">
+  </div>
+</section>
+
+<div class="audit-closing">
+  <div class="audit-container">
+    <app-faq-list class="audit-faq" [items]="questions" />
+    <app-meeting-request class="audit-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Conoce el nivel de cumplimiento laboral de tu empresa" description="Conversa con nuestro equipo para identificar qué procesos puedes fortalecer en materia laboral y de seguridad y salud en el trabajo." />
+  </div>
+</div>

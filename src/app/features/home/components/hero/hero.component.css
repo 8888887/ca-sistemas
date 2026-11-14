@@ -1,14 +1,14 @@
 .hero { padding: 155px 0 40px; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 40px; align-items: center; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 20px; padding: 3px 13px; border: 2px solid white; border-radius: 30px; font-size: 13.6px; font-weight: 600; }
-.er-mark { font-size: 20px; font-weight: 800; line-height: 1; letter-spacing: -3px; padding-right: 3px; }
+.er-mark { display: block; flex-shrink: 0; width: 30px; height: auto; object-fit: contain; }
 h1 { margin: 0; font-size: 52.59px; line-height: 1.04; font-weight: 800; letter-spacing: -.9px; }
 h1 span { color: #61cce9; }
 .hero-description { margin: 24px 0 32px; font-size: 13.28px; font-weight: 500; line-height: 1.65; text-align: justify; }
 .hero-actions { display: flex; gap: 26px; }
 .hero-actions .button { min-width: 190px; font-size: 12.48px; min-height: 40px; }
 .hero-visual { position: relative; margin-inline: 5px 18px; }
-.hero-photo { width: 100%; aspect-ratio: 1.25; height: auto; object-fit: cover; border-radius: 20px; }
+.hero-photo { width: 100%; aspect-ratio: 425/337; height: auto; object-fit: cover; border-radius: 20px; }
 .trust-badge { position: absolute; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px 5px 7px; border-radius: 14px; background: #fff; color: #034467; box-shadow: 0 3px 3px #0005; font-size: 9.6px; line-height: 1.15; }
 .badge-icon { display: grid; place-items: center; color: #fff; background: #0756ed; width: 30px; height: 30px; border-radius: 999px; }
 .badge-icon app-icon { width: 22px; height: 22px; }

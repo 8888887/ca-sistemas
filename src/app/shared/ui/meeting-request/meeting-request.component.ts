@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../directives/reveal/reveal.directive';
 import { DOCUMENT } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -12,7 +13,7 @@ export interface MeetingPlatform {
 
 @Component({
   selector: 'app-meeting-request',
-  imports: [ReactiveFormsModule, TranslatePipe, IconComponent],
+  imports: [RevealDirective, ReactiveFormsModule, TranslatePipe, IconComponent],
   templateUrl: './meeting-request.component.html',
   styleUrl: './meeting-request.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +23,8 @@ export class MeetingRequestComponent {
   readonly whatsappUrl = input.required<string>();
   readonly heading = input.required<string>();
   readonly description = input.required<string>();
+  readonly selectionLabel = input('¿Qué plataforma necesitas?');
+  readonly selectionError = input('Selecciona una plataforma.');
   private readonly builder = inject(NonNullableFormBuilder);
   private readonly document = inject(DOCUMENT);
   private readonly language = inject(LanguageService);

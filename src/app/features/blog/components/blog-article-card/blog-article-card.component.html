@@ -1,0 +1,9 @@
+<article>
+  <img [src]="article().image" alt="" width="564" height="282" [loading]="featured() ? 'eager' : 'lazy'">
+  <div class="copy">
+    <small>{{ categoryLabel() | translate }}</small>
+    <h2><button type="button" aria-haspopup="dialog" (click)="readArticle.emit(article())">{{ article().title | translate }}</button></h2>
+    <p>{{ article().excerpt | translate }}</p>
+    <span aria-hidden="true" class="arrow">↗</span>
+  </div>
+</article>

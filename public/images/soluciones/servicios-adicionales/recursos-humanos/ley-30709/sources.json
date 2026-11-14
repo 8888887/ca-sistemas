@@ -1,0 +1,12 @@
+{
+  "page": "/soluciones/ley-30709",
+  "source": "Seis imágenes PNG originales proporcionadas por el usuario; sin modificaciones.",
+  "assets": [
+    { "file": "implementacion-ley.png", "purpose": "Cabecera del servicio" },
+    { "file": "modelo-factores-puntos.png", "purpose": "Modelo de factores y puntos" },
+    { "file": "valoracion-puestos.png", "purpose": "Valoración y categorización de puestos" },
+    { "file": "bandas-salariales.png", "purpose": "Diseño de bandas salariales" },
+    { "file": "politicas-internas.png", "purpose": "Propuestas de políticas internas" },
+    { "file": "diagnostico-salarial.png", "purpose": "Diagnóstico salarial" }
+  ]
+}

@@ -1,0 +1,35 @@
+:host { display: block; }
+.certifications { --visible-cards: 5; padding-block: 50px 65px; }
+.carousel-shell { position: relative; margin-top: 49px; padding-inline: 48px; }
+.certifications-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 calc(50% / var(--visible-cards)), #000 calc(100% - 50% / var(--visible-cards)), transparent);
+}
+/* Four complete cards and two half cards fill five card widths on desktop. */
+.certification-track { display: flex; width: 100%; transform: translateX(calc(-50% / var(--visible-cards))); }
+.certification-track.is-animated { transition: transform 600ms ease-in-out; }
+.certification-track[data-position="1"] { transform: translateX(calc(-150% / var(--visible-cards))); }
+.certification-track[data-position="2"] { transform: translateX(calc(-250% / var(--visible-cards))); }
+.certification-track[data-position="3"] { transform: translateX(calc(-350% / var(--visible-cards))); }
+.certification-track[data-position="4"] { transform: translateX(calc(-450% / var(--visible-cards))); }
+.certification-track[data-position="5"] { transform: translateX(calc(-550% / var(--visible-cards))); }
+.certification-track[data-position="6"] { transform: translateX(calc(-650% / var(--visible-cards))); }
+.certificate { flex: 0 0 calc(100% / var(--visible-cards)); min-width: 0; padding-inline: 14px; }
+.certificate-image { display: flex; justify-content: center; align-items: center; height: 105px; }
+.certificate-image img { width: 180px; max-width: 100%; height: 95px; object-fit: contain; }
+.certificate p { margin: 16px 0 0; font-size: 10.88px; line-height: 1.7; color: #737b85; text-align: center; }
+.arrow { position: absolute; top: 50%; display: inline-flex; justify-content: center; align-items: center; width: 40px; height: 40px; padding: 8px; border: 0; border-radius: 50%; background: var(--cyan); color: white; transform: translateY(-50%); }
+.arrow:hover { background: var(--blue); }
+.arrow app-icon { width: 22px; height: 22px; }
+.previous { left: 0; }
+.next { right: 0; }
+.previous app-icon { transform: rotate(180deg); }
+@media (max-width: 1000px) { .certifications { --visible-cards: 3; } }
+@media (max-width: 760px) {
+  .certifications { --visible-cards: 2; padding-block: 36px 45px; }
+  .carousel-shell { margin-top: 32px; padding-inline: 36px; }
+  .arrow { width: 32px; height: 32px; padding: 6px; }
+  .arrow app-icon { width: 20px; height: 20px; }
+  .certificate { padding-inline: 10px; }
+  .certificate p { font-size: 12px; }
+}

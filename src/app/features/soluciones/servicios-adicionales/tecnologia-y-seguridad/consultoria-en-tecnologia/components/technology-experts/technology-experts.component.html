@@ -1,0 +1,11 @@
+<section class="experts-container" aria-labelledby="technology-experts-title">
+  <h2 id="technology-experts-title" appReveal="left">{{ 'Expertos en el sector de tecnología' | translate }}</h2>
+  <ul class="experts-list" appReveal="right" [appRevealDelay]="80">
+    @for (expert of experts; track expert.id) {
+      <li class="expert">
+        <img [src]="assets + expert.image" [alt]="expert.name" width="45" height="45" loading="lazy">
+        <h3>{{ expert.name }}</h3>
+      </li>
+    }
+  </ul>
+</section>

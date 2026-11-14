@@ -1,0 +1,12 @@
+:host { display: block; background: #eaf6fa; }
+.experts-container { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); gap: 60px; align-items: center; width: min(1180px, calc(100% - 152px)); margin-inline: auto; padding: 36px 0 34px; }
+h2 { max-width: 360px; margin: 0; font-size: 48px; font-weight: 750; line-height: 1.05; letter-spacing: -.5px; }
+.experts-list { margin: 0; padding: 24px 34px; background: white; border-radius: 8px; box-shadow: 0 0 28px #10295712; list-style: none; }
+.expert { display: flex; align-items: center; gap: 16px; min-width: 0; padding: 14px 0; border-bottom: 1px solid #e7e7e7; }
+.expert:first-child { padding-top: 0; }
+.expert:last-child { padding-bottom: 0; border-bottom: 0; }
+.expert img { flex-shrink: 0; width: 45px; height: 45px; object-fit: cover; border-radius: 3px; }
+.expert h3 { margin: 0; font-size: 15px; font-weight: 700; line-height: 1.4; }
+@media (max-width: 900px) { .experts-container { width: calc(100% - 64px); gap: 32px; } h2 { font-size: 38px; } .experts-list { padding: 24px; } }
+@media (max-width: 760px) { .experts-container { grid-template-columns: minmax(0,1fr); gap: 28px; width: calc(100% - 40px); padding: 36px 0; } h2 { max-width: none; font-size: 30px; text-align: center; } }
+@media (max-width: 420px) { .experts-list { padding: 20px; } .expert { gap: 12px; } .expert h3 { font-size: 14px; } }

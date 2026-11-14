@@ -1,14 +1,14 @@
 <section class="modules container" aria-labelledby="modules-title" [attr.aria-roledescription]="'carrusel' | translate">
-  <h2 class="section-title" id="modules-title">{{ 'Cinco módulos, una misma' | translate }} <span>{{ 'Plataforma' | translate }}</span></h2>
+  <h2 appReveal="left" class="section-title" id="modules-title">{{ 'Cinco módulos, una misma' | translate }} <span>{{ 'Plataforma' | translate }}</span></h2>
   <div class="carousel-shell">
     <button type="button" class="carousel-arrow previous" [attr.aria-label]="'Módulo anterior' | translate" (click)="move(-1)"><app-icon name="arrow" /></button>
     <article class="module-card" aria-live="polite" aria-atomic="true">
-      <div class="module-copy">
+      <div class="module-copy" appReveal="left">
         <h3>{{ active().label | translate }}</h3>
         <p>{{ active().description | translate }}</p>
         <a class="more-link" [routerLink]="['/soluciones', active().slug]"><span>{{ 'Ver más' | translate }}</span><app-icon name="arrow" /></a>
       </div>
-      <img [src]="'/images/' + images[index()]" [alt]="active().label | translate" loading="lazy" width="414" height="296">
+      <img appReveal="right" [appRevealDelay]="80" [src]="'/images/' + images[index()]" [alt]="active().label | translate" loading="lazy" width="414" height="296">
     </article>
     <button type="button" class="carousel-arrow next" [attr.aria-label]="'Siguiente módulo' | translate" (click)="move(1)"><app-icon name="arrow" /></button>
   </div>

@@ -1,0 +1,44 @@
+<section class="backup-hero dark-band" aria-labelledby="backup-title">
+  <div class="backup-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="backup-title"><span>{{ 'Protege tu información crítica' | translate }}</span> {{ 'con copias seguras, automáticas y siempre disponibles' | translate }}</h1>
+      <p class="hero-description">{{ 'En CA Sistemas Empresariales te brindamos una solución robusta de backup de bases de datos, diseñada para garantizar la continuidad operativa y la seguridad de tu información más valiosa.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'backup-servidores.png'" [alt]="'Profesional verificando copias de seguridad en servidores de un data center' | translate" width="429" height="262" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="backup-overview-title">
+  <div class="backup-container">
+    <h2 id="backup-overview-title" class="overview-title" appReveal="left">{{ '¿Por qué es vital contar con un backup profesional?' | translate }}</h2>
+  </div>
+  <div class="overview-grid">
+    <div class="overview-copy" appReveal="right" [appRevealDelay]="80">
+      <h3>{{ '¿Cómo protege un backup tu información?' | translate }}</h3>
+      <p>{{ overview | translate }}</p>
+    </div>
+    <img class="overview-photo" appReveal="left" [src]="assets + 'respaldo-informacion.png'" [alt]="'Interfaz digital de backup para proteger y recuperar información' | translate" width="413" height="227" loading="lazy">
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="backup-benefits-title">
+  <div class="backup-container">
+    <h2 id="backup-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios de nuestro servicio de Backup de BD' | translate }}</h2>
+  </div>
+  <ul class="backup-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="backup-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="backup-closing">
+  <app-faq-list class="backup-faq" [items]="questions" />
+  <app-meeting-request class="backup-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Protege tus datos y prepárate para recuperarlos ante una falla" description="Te ayudamos a definir qué bases de datos respaldar, con qué frecuencia y dónde guardar las copias para que puedas recuperar tu información cuando la necesites." />
+</div>

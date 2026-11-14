@@ -19,6 +19,8 @@ Subir el código fuente y `package-lock.json` a GitHub; las carpetas `node_modul
 
 ## Estructura
 
+Las imágenes y bloques de contenido usan la directiva compartida `appReveal` para entrar desde izquierda o derecha una vez por visita a la pantalla. Se activan al aparecer en el área visible, con una transición de 800 ms y un desplazamiento de 80px (40px en móvil). La directiva admite `[appRevealDelay]="80"` o `160` para escalonar las entradas. Sus estilos están en `src/styles/motion.css` y utiliza un único `IntersectionObserver` compartido. Respeta `prefers-reduced-motion`, muestra de inmediato los controles que reciben foco y mantiene el contenido visible si el navegador no admite la observación. La comprobación de movimiento se ejecuta con `node scripts/check-motion-ui.mjs`; las comprobaciones de distribución usan movimiento reducido.
+
 ```text
 src/app/
   core/
@@ -53,6 +55,54 @@ src/app/
     solutions/pages/solution/
     soluciones/
       soluciones.routes.ts
+      servicios-adicionales/
+        servicios-adicionales.routes.ts
+        recursos-humanos/
+          recursos-humanos.routes.ts
+          auditoria-laboral/
+            pages/auditoria-laboral/ # HTML, CSS y TypeScript del servicio
+            data/                   # Áreas de revisión, beneficios y preguntas
+          ley-30709/
+            pages/ley-30709/        # HTML, CSS y TypeScript del servicio
+            data/                   # Etapas del servicio y preguntas
+          hr-analytics/
+            pages/hr-analytics/     # HTML, CSS y TypeScript del servicio
+            data/                   # Indicadores, beneficios y preguntas
+          payroll/
+            pages/payroll/          # HTML, CSS y TypeScript del servicio
+            data/                   # Procesamiento, beneficios y preguntas
+          evaluacion-de-desempeno/
+            pages/evaluacion-de-desempeno/ # HTML, CSS y TypeScript
+            data/                   # Beneficios y preguntas
+          encuesta-de-clima-laboral/
+            pages/encuesta-de-clima-laboral/ # HTML, CSS y TypeScript
+            data/                   # Beneficios y preguntas
+        gestion-empresarial/
+          gestion-empresarial.routes.ts
+          firmas-digitales-certificadas/
+            pages/firmas-digitales-certificadas/ # HTML, CSS y TypeScript
+            data/                   # Beneficios y preguntas
+          mejora-de-procesos/
+            pages/mejora-de-procesos/ # HTML, CSS y TypeScript
+            data/                   # Presentación, beneficios y preguntas
+        tecnologia-y-seguridad/
+          tecnologia-y-seguridad.routes.ts
+          consultoria-en-tecnologia/
+            pages/consultoria-en-tecnologia/ # HTML, CSS y TypeScript
+            components/technology-experts/  # Sección exclusiva de expertos
+            data/                   # Beneficios, expertos y preguntas
+          gestion-de-base-de-datos/
+            pages/gestion-de-base-de-datos/ # HTML, CSS y TypeScript
+            data/                   # Presentación, beneficios y preguntas
+          pentesting/
+            pages/pentesting/       # HTML, CSS y TypeScript
+            data/                   # Presentación, beneficios y preguntas
+          data-center/
+            pages/data-center/      # HTML, CSS y TypeScript
+            data/                   # Presentación, beneficios y preguntas
+          backup-empresarial/
+            pages/backup-empresarial/ # HTML, CSS y TypeScript
+            data/                   # Presentación, beneficios y preguntas
       plataformas/
         plataformas.routes.ts
         planillas-y-control-de-asistencia/
@@ -116,6 +166,32 @@ La pantalla de E-Learning está en `/soluciones/e-learning`. Mantiene sus archiv
 La pantalla Nosotros está en `/nosotros`, enlazada desde la cabecera y el footer. Reutiliza el layout general y organiza su historia, misión, visión, galería, siete valores y cuatro servicios en una funcionalidad independiente. Sus diez imágenes originales y los iconos se documentan en [recursos de Nosotros](docs/assets/nosotros.md). Se comprueba en el servidor local con `node scripts/check-nosotros-ui.mjs`.
 
 Los datos de contacto se cambian en `core/config/contact.config.ts`. Las variables visuales están en `src/styles.css`. Las convenciones para futuras modificaciones están en [AGENTS.md](AGENTS.md).
+
+Auditoría Laboral tiene su pantalla propia en `/soluciones/auditoria-laboral`, organizada dentro de Servicios adicionales → Recursos Humanos. Se accede desde el menú, el footer y la tarjeta de Nosotros. Usa las tres imágenes originales, animaciones compartidas y un formulario con selección de servicios. Ver [recursos de auditoría laboral](docs/assets/auditoria-laboral.md). La revisión local se ejecuta con `node scripts/check-audit-ui.mjs`.
+
+Implementación de la Ley N.° 30709 está en `/soluciones/ley-30709`, dentro de la misma área de Recursos Humanos. Organiza cinco etapas del servicio en bloques alternados, con las seis imágenes originales, preguntas frecuentes y el formulario compartido de servicios. Ver [recursos de la Ley 30709](docs/assets/ley-30709.md). Se revisa localmente con `node scripts/check-law-ui.mjs`.
+
+HR Analytics está en `/soluciones/hr-analytics`, dentro de Servicios adicionales → Recursos Humanos. Presenta indicadores y reportes, análisis predictivo y decisiones basadas en datos, con cuatro imágenes originales, preguntas frecuentes y el formulario compartido de servicios. Ver [recursos de HR Analytics](docs/assets/hr-analytics.md). Se comprueba en local con `node scripts/check-analytics-ui.mjs`.
+
+Payroll y procesamiento de planillas está en `/soluciones/payroll`, dentro de Servicios adicionales → Recursos Humanos. Usa cinco imágenes originales y presenta automatización de nómina, costos laborales, acompañamiento y pagos puntuales. Reutiliza las animaciones, preguntas frecuentes y el formulario de servicios. Ver [recursos del servicio de Payroll](docs/assets/payroll.md). Se revisa con `node scripts/check-payroll-service-ui.mjs`.
+
+Evaluación de Desempeño está en `/soluciones/evaluacion-de-desempeno`, dentro de Servicios adicionales → Recursos Humanos. Presenta cinco beneficios con los SVG originales, dos fotografías, preguntas frecuentes y el formulario compartido. Ver [recursos de evaluación de desempeño](docs/assets/evaluacion-de-desempeno.md). Se comprueba en local con `node scripts/check-performance-ui.mjs`.
+
+Encuesta de Clima Laboral está en `/soluciones/encuesta-de-clima-laboral`, dentro de Servicios adicionales → Recursos Humanos. Conserva la fotografía y los cinco iconos SVG originales del usuario, con beneficios y preguntas en su carpeta `data/` y HTML, CSS y TypeScript en `pages/encuesta-de-clima-laboral/`. Reutiliza el layout, las animaciones y el formulario de servicios, con español e inglés. Ver [recursos de encuesta de clima laboral](docs/assets/encuesta-de-clima-laboral.md). Se comprueba en local con `node scripts/check-climate-ui.mjs`.
+
+Firmas Digitales Certificadas está en `/soluciones/firmas-digitales-certificadas`, dentro de Servicios adicionales → Gestión Empresarial. Conserva la fotografía y los cinco SVG originales del usuario, con la presentación, beneficios, preguntas frecuentes y formulario de contacto en una funcionalidad independiente. Ver [recursos de firmas digitales](docs/assets/firmas-digitales-certificadas.md). Se comprueba en local con `node scripts/check-signature-ui.mjs`.
+
+Levantamiento y mejora de procesos está en `/soluciones/mejora-de-procesos`, dentro de Servicios adicionales → Gestión Empresarial. Usa las tres fotografías y los cinco SVG originales del usuario, con presentación del servicio, explicación, beneficios, preguntas y formulario compartido. Mantiene HTML, CSS, TypeScript y datos separados. Ver [recursos de mejora de procesos](docs/assets/mejora-de-procesos.md). Se comprueba en local con `node scripts/check-process-ui.mjs`.
+
+Consultoría en Tecnología está en `/soluciones/consultoria-en-tecnologia`, dentro de Servicios adicionales → Tecnología y Seguridad. Conserva la imagen principal, los tres retratos y los ocho SVG originales del usuario. Organiza la pantalla, sus datos y el componente de expertos en carpetas propias, con preguntas frecuentes, formulario compartido y español e inglés. Ver [recursos de consultoría en tecnología](docs/assets/consultoria-en-tecnologia.md). Se comprueba en local con `node scripts/check-consulting-ui.mjs`.
+
+Administración y Gestión de Base de Datos está en `/soluciones/gestion-de-base-de-datos`, dentro de Servicios adicionales → Tecnología y Seguridad. Conserva las dos imágenes y los cinco SVG originales del usuario, con presentación de SQL Server, alcance del servicio, preguntas frecuentes y formulario compartido. Mantiene HTML, CSS, TypeScript y datos separados. Ver [recursos de gestión de base de datos](docs/assets/gestion-de-base-de-datos.md). Se comprueba en local con `node scripts/check-database-ui.mjs`.
+
+Pentesting y Análisis de Vulnerabilidades está en `/soluciones/pentesting`, dentro de Servicios adicionales → Tecnología y Seguridad. Conserva las dos imágenes y los cinco SVG originales del usuario, con explicación del servicio, cinco beneficios, preguntas frecuentes y formulario compartido. Mantiene HTML, CSS, TypeScript y datos separados. Ver [recursos de pentesting](docs/assets/pentesting.md). Se comprueba en local con `node scripts/check-pentesting-ui.mjs`.
+
+Alojamiento en Data Center está en `/soluciones/data-center`, dentro de Servicios adicionales → Tecnología y Seguridad. Usa las dos imágenes y los cinco SVG originales del usuario, con una presentación del hosting empresarial, cinco beneficios y contenido de contacto adaptado al servicio. Mantiene HTML, CSS, TypeScript y datos separados. Ver [recursos de data center](docs/assets/data-center.md). Se comprueba en local con `node scripts/check-data-center-ui.mjs`.
+
+Backup Empresarial está en `/soluciones/backup-empresarial`, dentro de Servicios adicionales → Tecnología y Seguridad. Conserva las dos imágenes y los cinco SVG originales del usuario, con una explicación del respaldo profesional, beneficios, preguntas frecuentes y formulario compartido. Mantiene HTML, CSS, TypeScript y datos separados. Ver [recursos de backup empresarial](docs/assets/backup-empresarial.md). Se comprueba en local con `node scripts/check-backup-ui.mjs`.
 
 Las fuentes y las medidas fijas de los estilos usan píxeles (`px`). Los ajustes de tamaño por pantalla se definen con media queries en píxeles; los porcentajes y las fracciones de las columnas se conservan para el layout adaptable.
 

@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { TranslatePipe } from '../../../../shared/i18n/translate.pipe';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -6,7 +7,7 @@ import { IconComponent } from '../../../../shared/ui/icon/icon.component';
 
 @Component({
   selector: 'app-module-carousel',
-  imports: [TranslatePipe, RouterLink, IconComponent],
+  imports: [RevealDirective, TranslatePipe, RouterLink, IconComponent],
   templateUrl: './module-carousel.component.html',
   styleUrl: './module-carousel.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

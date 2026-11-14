@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CONTACT } from '../../../../core/config/contact.config';
 import { PLATFORM_SOLUTIONS } from '../../../../core/config/solutions.data';
@@ -9,7 +10,7 @@ import { HARASSMENT_FAQS, HARASSMENT_FEATURES } from './data/hostigamiento-labor
 
 @Component({
   selector: 'app-hostigamiento-laboral-sexual',
-  imports: [TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
+  imports: [RevealDirective, TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
   templateUrl: './hostigamiento-laboral-y-sexual.component.html',
   styleUrl: './hostigamiento-laboral-y-sexual.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

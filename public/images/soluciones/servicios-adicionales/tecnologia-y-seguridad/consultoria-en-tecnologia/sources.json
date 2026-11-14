@@ -1,0 +1,18 @@
+{
+  "page": "/soluciones/consultoria-en-tecnologia",
+  "source": "Imagen principal, tres retratos PNG y ocho iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "consultoria-tecnologia.png", "purpose": "Cabecera del servicio" },
+    { "file": "robert-palomino.png", "purpose": "Robert Palomino de la Gala Núñez" },
+    { "file": "martin-vera.png", "purpose": "Martin Vera" },
+    { "file": "luis-madrid.png", "purpose": "Luis Madrid Guerra" },
+    { "file": "icons/digital-modernizacion.svg", "purpose": "Transformación digital" },
+    { "file": "icons/diagnostico-integral.svg", "purpose": "Diagnóstico integral" },
+    { "file": "icons/modelo-objetivo.svg", "purpose": "Modelo objetivo de TI" },
+    { "file": "icons/optimizacion-areas.svg", "purpose": "Optimización de áreas de TI" },
+    { "file": "icons/roadmap-tecnologico.svg", "purpose": "Roadmap tecnológico" },
+    { "file": "icons/planes-estrategicos.svg", "purpose": "Planes estratégicos de TI" },
+    { "file": "icons/elaboracion-optimizacion.svg", "purpose": "Presupuestos de TI" },
+    { "file": "icons/iniciativas-priorizacion.svg", "purpose": "Gobierno de TI y priorización" }
+  ]
+}

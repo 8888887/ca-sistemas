@@ -1,0 +1,59 @@
+:host { display: block; background: var(--surface); }
+.backup-container { width: min(1180px, calc(100% - 128px)); margin-inline: auto; }
+.backup-hero { min-height: 519px; padding: 146px 0 48px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 24px; align-items: center; width: min(1180px, calc(100% - 100px)); }
+.hero-copy, .overview-copy { min-width: 0; }
+h1 { margin: 0 0 12px; font-size: 44px; font-weight: 800; line-height: 1.34; letter-spacing: -.5px; }
+h1 span { color: #65cee9; }
+.hero-description { max-width: 500px; margin: 0; font-size: 15px; line-height: 1.65; text-align: justify; }
+.hero-photo { align-self: start; width: 100%; height: auto; margin-top: 16px; aspect-ratio: 429/262; object-fit: cover; border-radius: 12px; }
+.overview-section { padding-top: 64px; }
+.overview-title { max-width: 700px; margin: 0 auto; font-size: 32px; font-weight: 750; line-height: 1.05; letter-spacing: -.4px; text-align: center; }
+.overview-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 34px; align-items: center; width: min(1120px, calc(100% - 184px)); margin: 32px auto 0; }
+.overview-copy { grid-column: 2; grid-row: 1; }
+.overview-copy h3 { margin: 0 0 20px; font-size: 32px; font-weight: 750; line-height: 1.05; letter-spacing: -.4px; }
+.overview-copy p { margin: 0; color: #506d87; font-size: 15px; line-height: 1.65; text-align: justify; }
+.overview-photo { grid-column: 1; grid-row: 1; width: 100%; height: auto; margin-top: 24px; aspect-ratio: 413/227; object-fit: cover; border-radius: 22px; }
+.benefits-section { padding-top: 66px; color: #08445f; font-family: Arial, sans-serif; }
+.benefits-title { max-width: 700px; margin: 0 auto; font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -.5px; text-align: center; }
+.backup-benefits { display: grid; gap: 55px; width: min(608px, calc(100% - 80px)); margin: 58px auto 0; padding: 0; list-style: none; }
+.backup-benefit { display: grid; grid-template-columns: 114px minmax(0,1fr); gap: 40px; align-items: center; min-height: 114px; }
+.benefit-icon { width: 114px; height: 114px; }
+.benefit-copy { min-width: 0; }
+.benefit-copy h3 { margin: 0 0 8px; font-size: 20px; font-weight: 700; line-height: 1.3; }
+.benefit-copy p { margin: 0; font-size: 17px; line-height: 1.47; text-align: justify; }
+.backup-closing { padding: 64px 0 120px; }
+.backup-faq { --faq-heading-gap: 60px; --faq-item-gap: 24px; --faq-answer-size: 15px; width: min(1060px, calc(100% - 272px)); margin-inline: auto; }
+.backup-meeting { --meeting-heading-size: 32px; --meeting-heading-width: 440px; --meeting-copy-ratio: 2.1fr; --meeting-gap: 60px; width: min(1060px, calc(100% - 216px)); margin: 100px auto 0; }
+@media (max-width: 1100px) { h1 { font-size: 40px; } }
+@media (max-width: 900px) {
+  .backup-container, .hero-grid, .overview-grid, .backup-meeting { width: calc(100% - 64px); }
+  h1 { font-size: 34px; }
+  .hero-grid, .overview-grid { gap: 28px; }
+  .overview-title, .overview-copy h3 { font-size: 30px; }
+  .backup-benefits { width: calc(100% - 80px); }
+  .backup-faq { width: calc(100% - 96px); }
+}
+@media (max-width: 760px) {
+  .backup-container, .hero-grid, .overview-grid, .backup-faq, .backup-meeting { width: calc(100% - 40px); }
+  .backup-hero { min-height: 0; padding: 140px 0 40px; }
+  .hero-grid, .overview-grid { grid-template-columns: minmax(0,1fr); gap: 32px; }
+  h1 { margin-bottom: 20px; font-size: 36px; line-height: 1.15; }
+  .hero-description, .overview-copy p, .benefit-copy p { text-align: left; }
+  .hero-photo { margin-top: 0; }
+  .overview-section { padding-top: 36px; }
+  .overview-title, .overview-copy h3 { font-size: 28px; }
+  .overview-copy, .overview-photo { grid-column: auto; grid-row: auto; }
+  .overview-photo { margin-top: 0; }
+  .benefits-section { padding-top: 40px; }
+  .benefits-title { font-size: 28px; }
+  .backup-benefits { gap: 32px; width: calc(100% - 40px); margin-top: 36px; }
+  .backup-benefit { grid-template-columns: 80px minmax(0,1fr); gap: 20px; align-items: start; min-height: 0; }
+  .benefit-icon { width: 80px; height: 80px; }
+  .benefit-copy h3 { font-size: 18px; }
+  .benefit-copy p { font-size: 14px; }
+  .backup-closing { padding: 48px 0; }
+  .backup-faq { --faq-heading-gap: 30px; }
+  .backup-meeting { margin-top: 40px; }
+}
+@media (max-width: 420px) { h1 { font-size: 32px; } }

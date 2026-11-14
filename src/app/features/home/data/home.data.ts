@@ -24,10 +24,10 @@ export const TESTIMONIALS = [
 ] as const;
 
 export const CERTIFICATIONS = [
-  { name: 'Oracle', image: 'oracle.webp', description: 'Homologado con las versiones CLOUD y NETSUITE.' },
-  { name: 'Microsoft Dynamics', image: 'microsoft-dynamics.webp', description: 'Homologado con las versiones AX, NAV, GP y Business Central de Microsoft Dynamics.' },
-  { name: 'SAP Business One', image: 'sap.webp', description: 'Homologado con las versiones SAP BUSINESS ONE, R3 y S4.' },
-  { name: 'ISO 27001', image: 'iso-27001.webp', description: 'Garantizamos la seguridad, confidencialidad e integridad de la información.' },
-  { name: 'Indecopi', image: 'indecopi.webp', description: 'Software propio cuya propiedad intelectual está registrada en INDECOPI.' },
-  { name: 'Ministerio de Justicia y Derechos Humanos', image: 'ministry.webp', description: 'Inscrito en el Registro Nacional de Protección de Datos Personales.' },
+  { name: 'Oracle', image: 'home/certifications/oracle.png', description: 'Homologado con las versiones CLOUD y NETSUITE.' },
+  { name: 'Microsoft Dynamics', image: 'home/certifications/microsoft-dynamics.png', description: 'Homologado con las versiones AX, NAV, GP y Business Central de Microsoft Dynamics.' },
+  { name: 'SAP Business One', image: 'home/certifications/sap-business-one.png', description: 'Homologado con las versiones SAP BUSINESS ONE, R3 y S4.' },
+  { name: 'ISO 27001', image: 'home/certifications/iso-27001.png', description: 'Garantizamos la seguridad, confidencialidad e integridad de la información.' },
+  { name: 'Indecopi', image: 'home/certifications/indecopi.png', description: 'Software propio cuya propiedad intelectual está registrada en INDECOPI.' },
+  { name: 'Ministerio de Justicia y Derechos Humanos', image: 'home/certifications/ministerio-justicia.png', description: 'Inscrito en el Registro Nacional de Protección de Datos Personales.' },
 ] as const;

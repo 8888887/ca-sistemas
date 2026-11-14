@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslatePipe } from '../../../../shared/i18n/translate.pipe';
 import { PurposeCardComponent } from '../../components/purpose-card/purpose-card.component';
@@ -7,7 +8,7 @@ import { ABOUT_DIFFERENTIATORS, ABOUT_EXPERIENCE, ABOUT_HISTORY, ABOUT_PURPOSES,
 
 @Component({
   selector: 'app-nosotros',
-  imports: [TranslatePipe, PurposeCardComponent, ValueCardComponent, ServiceCardComponent],
+  imports: [RevealDirective, TranslatePipe, PurposeCardComponent, ValueCardComponent, ServiceCardComponent],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

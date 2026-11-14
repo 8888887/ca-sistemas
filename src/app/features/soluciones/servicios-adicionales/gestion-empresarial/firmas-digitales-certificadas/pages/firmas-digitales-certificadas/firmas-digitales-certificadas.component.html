@@ -1,0 +1,39 @@
+<section class="signature-hero dark-band" aria-labelledby="signature-title">
+  <div class="signature-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="signature-title">{{ 'Acelera tus procesos,' | translate }} <span>{{ 'garantiza' | translate }}</span> {{ 'la validez legal y' | translate }} <span>{{ 'protege' | translate }}</span> {{ 'tu información' | translate }}</h1>
+      <p class="hero-description">{{ 'En CA Sistemas Empresariales te ayudamos a modernizar tu gestión documental con una solución ágil, segura y 100% válida legalmente.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'firma-digital-certificada.png'" [alt]="'Profesional revisando un documento con firma digital certificada en una computadora' | translate" width="396" height="223" fetchpriority="high">
+  </div>
+</section>
+
+<section class="signature-intro" aria-labelledby="signature-intro-title">
+  <div class="signature-container" appReveal="left">
+    <h2 id="signature-intro-title">{{ 'Con nuestras Firmas Digitales Certificadas, firma contratos, autorizaciones, documentos laborales y administrativos desde cualquier lugar y en segundos.' | translate }}</h2>
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="signature-benefits-title">
+  <div class="signature-container">
+    <h2 id="signature-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios clave de nuestra solución de Firma Digital' | translate }}</h2>
+  </div>
+  <ul class="signature-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="signature-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="signature-closing">
+  <div class="signature-container">
+    <app-faq-list class="signature-faq" [items]="questions" />
+  </div>
+  <app-meeting-request class="signature-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Firma tus documentos sin imprimir ni trasladarte" description="Nuestro equipo está listo para ayudarte a implementar firmas digitales certificadas de manera rápida y sin complicaciones." />
+</div>

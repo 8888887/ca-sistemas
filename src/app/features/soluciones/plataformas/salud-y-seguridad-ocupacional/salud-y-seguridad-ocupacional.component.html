@@ -1,12 +1,12 @@
 <section class="safety-hero dark-band" aria-labelledby="safety-title">
   <div class="safety-container">
-    <p class="module-label">{{ 'Salud y Seguridad Ocupacional' | translate }}</p>
+    <p class="module-label" appReveal="left">{{ 'Salud y Seguridad Ocupacional' | translate }}</p>
     <div class="safety-hero-content">
-      <div class="hero-copy">
+      <div class="hero-copy" appReveal="left" [appRevealDelay]="80">
         <h1 id="safety-title"><span>{{ 'Simplifica' | translate }}</span> {{ 'la gestión de la seguridad y salud en el trabajo' | translate }}</h1>
         <p>{{ 'Con' | translate }} <strong>Empresarial-RH</strong>{{ ', un software modular en la nube, puedes centralizar la información de tu organización y dar seguimiento a las acciones preventivas para reducir los riesgos laborales y proteger a tu equipo.' | translate }}</p>
       </div>
-      <img class="platform-preview" [src]="assets + 'plataforma-salud-seguridad.png'" [alt]="'Vista de la plataforma de Seguridad y Salud Ocupacional de Empresarial-RH' | translate" width="417" height="244" fetchpriority="high">
+      <img class="platform-preview" appReveal="right" [appRevealDelay]="160" [src]="assets + 'plataforma-salud-seguridad.png'" [alt]="'Vista de la plataforma de Seguridad y Salud Ocupacional de Empresarial-RH' | translate" width="417" height="244" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -15,11 +15,11 @@
   <div class="safety-features">
     @for (feature of features; track feature.id; let position = $index) {
       <section class="safety-feature" [class.is-reversed]="position % 2 === 1" [attr.aria-labelledby]="'safety-' + feature.id + '-title'">
-        <div class="feature-copy">
+        <div class="feature-copy" [appReveal]="position % 2 === 1 ? 'right' : 'left'">
           <h2 [id]="'safety-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
           <p>{{ feature.description | translate }}</p>
         </div>
-        <img [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
+        <img [appReveal]="position % 2 === 1 ? 'left' : 'right'" [appRevealDelay]="80" [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
       </section>
     }
   </div>

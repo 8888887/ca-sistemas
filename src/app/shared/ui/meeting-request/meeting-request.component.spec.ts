@@ -41,6 +41,30 @@ describe('MeetingRequestComponent', () => {
     expect(host.querySelectorAll('[aria-invalid="true"]').length).toBe(4);
   });
 
+  it('supports service choices and translates their label and validation without losing the selection', () => {
+    const open = spyOn(window, 'open');
+    fixture.componentRef.setInput('platforms', [{ slug: 'auditoria-laboral', label: 'Auditoría Laboral' }]);
+    fixture.componentRef.setInput('selectionLabel', '¿Qué servicio necesitas?');
+    fixture.componentRef.setInput('selectionError', 'Selecciona un servicio.');
+    fixture.detectChanges();
+    submit();
+    fixture.detectChanges();
+    expect(host.querySelector('label[for="meeting-platform"]')!.textContent).toBe('¿Qué servicio necesitas?');
+    expect(host.querySelector('#meeting-platform-error')!.textContent).toContain('Selecciona un servicio.');
+    fill('#meeting-email', 'ana@example.com');
+    fill('#meeting-phone', '+51 999 888 777');
+    fill('#meeting-platform', 'auditoria-laboral', 'change');
+    host.querySelector<HTMLInputElement>('#meeting-permission')!.click();
+    TestBed.inject(LanguageService).setLanguage('en');
+    fixture.detectChanges();
+    expect(host.querySelector('label[for="meeting-platform"]')!.textContent).toBe('Which service do you need?');
+    expect(host.querySelector<HTMLSelectElement>('#meeting-platform')!.value).toBe('auditoria-laboral');
+    submit();
+    expect(open).toHaveBeenCalledTimes(1);
+    const destination = new URL(String(open.calls.mostRecent().args[0]));
+    expect(destination.searchParams.get('text')).toContain('Labor Audit');
+  });
+
   it('requires valid contact details and permission before preparing the meeting', () => {
     const open = spyOn(window, 'open');
     fill('#meeting-email', 'invalid');

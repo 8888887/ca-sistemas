@@ -26,6 +26,8 @@ const screenshot = async name => {
 };
 try {
   await mkdir('artifacts', { recursive: true });
+  // Layout checks use reduced motion; check-motion-ui.mjs exercises real transitions.
+  await browser.page('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   await browser.page('Runtime.enable');
   await browser.page('Network.enable');
   await browser.page('Emulation.setDeviceMetricsOverride', { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });

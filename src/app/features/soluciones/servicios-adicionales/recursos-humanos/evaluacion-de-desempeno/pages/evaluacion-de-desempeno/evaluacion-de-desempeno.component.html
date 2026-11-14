@@ -1,0 +1,43 @@
+<section class="performance-hero dark-band" aria-labelledby="performance-title">
+  <div class="performance-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="performance-title"><span>{{ 'Impulsa el talento de' | translate }}</span> {{ 'tu equipo con datos claros' | translate }}</h1>
+      <p class="hero-description">{{ 'En CA Sistemas Empresariales te ofrecemos una herramienta completa y flexible para evaluar el rendimiento de tu personal de forma objetiva, ágil y totalmente digital. Identifica fortalezas, detecta oportunidades de mejora y toma decisiones basadas en datos reales.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'evaluacion-digital.png'" [alt]="'Profesionales revisando indicadores y evaluaciones de desempeño en una computadora' | translate" width="412" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="performance-overview-title">
+  <div class="performance-container overview-grid">
+    <div class="overview-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="performance-overview-title">{{ '¿Qué es la Evaluación de Desempeño?' | translate }}</h2>
+      <p>{{ 'Es un proceso clave en la gestión de talento humano que permite medir el rendimiento, compromiso y cumplimiento de objetivos de cada colaborador dentro de tu organización. Nuestra solución automatiza este proceso, asegurando transparencia, equidad y eficiencia.' | translate }}</p>
+    </div>
+    <img class="overview-photo" appReveal="left" [src]="assets + 'evaluacion-equipo.png'" [alt]="'Equipo conversando sobre el rendimiento y los resultados de una evaluación' | translate" width="475" height="261" loading="lazy">
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="performance-benefits-title">
+  <div class="performance-container">
+    <h2 id="performance-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios de nuestro sistema de Evaluación de Desempeño' | translate }}</h2>
+  </div>
+  <ul class="performance-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="performance-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="performance-closing">
+  <div class="performance-container">
+    <app-faq-list class="performance-faq" [items]="questions" />
+    <app-meeting-request class="performance-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Evalúa el desempeño con criterios claros" description="Conoce cómo CA Sistemas te ayuda a configurar evaluaciones por cargo, consultar los resultados y definir los próximos pasos para desarrollar a tu equipo." />
+  </div>
+</div>

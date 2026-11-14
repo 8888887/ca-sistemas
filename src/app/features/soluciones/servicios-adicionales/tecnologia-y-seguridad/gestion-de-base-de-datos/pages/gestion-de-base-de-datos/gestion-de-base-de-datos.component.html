@@ -1,0 +1,43 @@
+<section class="database-hero dark-band" aria-labelledby="database-title">
+  <div class="database-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="database-title"><span>{{ 'Optimiza, protege y asegura' | translate }}</span> {{ 'el corazón de tu operación en SQL Server' | translate }}</h1>
+      <p class="hero-description">{{ 'En CA Sistemas Empresariales te ofrecemos un servicio integral de administración, monitoreo y optimización de bases de datos en SQL Server, orientado a maximizar el rendimiento, disponibilidad y seguridad de tu información crítica.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'administracion-sql-server.png'" [alt]="'Profesional monitoreando el rendimiento y la seguridad de bases de datos SQL Server' | translate" width="429" height="262" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="database-overview-title">
+  <div class="database-container overview-grid">
+    <div class="overview-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="database-overview-title">{{ '¿Por qué es clave una buena gestión de SQL Server?' | translate }}</h2>
+      @for (paragraph of overview; track paragraph) {
+        <p>{{ paragraph | translate }}</p>
+      }
+    </div>
+    <img class="overview-photo" appReveal="left" [src]="assets + 'sql-server.png'" [alt]="'Ilustración de SQL con consultas y estructuras de bases de datos' | translate" width="475" height="261" loading="lazy">
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="database-benefits-title">
+  <div class="database-container">
+    <h2 id="database-benefits-title" class="benefits-title" appReveal="left">{{ '¿Qué incluye nuestro servicio?' | translate }}</h2>
+  </div>
+  <ul class="database-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="database-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="database-closing">
+  <app-faq-list class="database-faq" [items]="questions" />
+  <app-meeting-request class="database-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Mantén tu operación en marcha con expertos en SQL Server" description="Con CA Sistemas, monitorea el rendimiento de tus bases de datos, protege tu información crítica y prepara tu operación para recuperarse ante fallas." />
+</div>

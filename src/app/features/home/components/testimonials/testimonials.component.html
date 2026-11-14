@@ -1,12 +1,12 @@
 <section id="testimonios" class="container testimonials" aria-labelledby="testimonials-title">
-  <h2 id="testimonials-title" class="section-title">{{ 'Testimonios' | translate }}</h2>
+  <h2 appReveal="left" id="testimonials-title" class="section-title">{{ 'Testimonios' | translate }}</h2>
   <div class="testimonial-grid">
-    <article class="featured-testimonial">
+    <article class="featured-testimonial" appReveal="left">
       <app-video-card videoId="7xE29M85_pU" title="Grupo Santis - CA Sistemas Empresariales" />
       <h3>Grupo Santis</h3>
       <p>{{ 'Conoce la experiencia de Grupo Santis junto a' | translate }} <strong>CA Sistemas Empresariales.</strong></p>
     </article>
-    <div class="testimonial-list">
+    <div class="testimonial-list" appReveal="right" [appRevealDelay]="80">
       @for (item of testimonials; track item.company) {
         <article class="testimonial-item">
           <app-video-card [videoId]="item.videoId" [title]="('Testimonio de' | translate) + ' ' + item.company" />

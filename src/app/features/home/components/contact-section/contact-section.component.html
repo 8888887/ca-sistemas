@@ -1,11 +1,11 @@
 <section id="contacto" class="container introduction" [attr.aria-label]="'Conoce CA Sistemas y cuéntanos tu necesidad' | translate">
-  <div class="intro-video">
+  <div class="intro-video" appReveal="left">
     <app-video-card videoId="x-ZW9gzAQpQ" [title]="'Automatiza tus procesos de RR.HH. | CA Sistemas' | translate" />
     <div class="benefits">
-      <div><span class="benefit-icon"><app-icon name="settings" /></span><strong>{{ 'Procesos' | translate }}<br>{{ 'más eficientes' | translate }}</strong></div>
-      <div><span class="benefit-icon purple"><app-icon name="people" /></span><strong>{{ '+ 100 mil' | translate }}<br>{{ 'colaboradores' | translate }}</strong></div>
-      <div><span class="benefit-icon green"><app-icon name="growth" /></span><strong>{{ 'Tu empresa' | translate }}<br>{{ 'en crecimiento' | translate }}</strong></div>
+      <div><img class="benefit-icon" src="/images/home/benefits/procesos-eficientes.svg" alt="" width="44" height="44" loading="lazy"><strong>{{ 'Procesos' | translate }}<br>{{ 'más eficientes' | translate }}</strong></div>
+      <div><img class="benefit-icon" src="/images/home/benefits/colaboradores.svg" alt="" width="44" height="44" loading="lazy"><strong>{{ '+ 100 mil' | translate }}<br>{{ 'colaboradores' | translate }}</strong></div>
+      <div><img class="benefit-icon" src="/images/home/benefits/empresa-crecimiento.svg" alt="" width="44" height="44" loading="lazy"><strong>{{ 'Tu empresa' | translate }}<br>{{ 'en crecimiento' | translate }}</strong></div>
     </div>
   </div>
-  <app-contact-form [whatsappUrl]="contact.whatsapp" />
+  <app-contact-form appReveal="right" [appRevealDelay]="80" [whatsappUrl]="contact.whatsapp" />
 </section>

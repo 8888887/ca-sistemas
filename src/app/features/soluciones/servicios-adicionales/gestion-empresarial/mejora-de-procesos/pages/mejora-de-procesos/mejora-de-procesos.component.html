@@ -1,0 +1,53 @@
+<section class="process-hero dark-band" aria-labelledby="process-title">
+  <div class="process-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="process-title"><span>{{ 'Ordena tus procesos' | translate }}</span> {{ 'y mejora la eficiencia de tu operación' | translate }}</h1>
+      <p class="hero-description">{{ 'Opera hoy para impulsar la mejora continua, la eficiencia y un crecimiento sostenible.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'revision-procesos.png'" [alt]="'Profesionales revisando un diagrama de procesos en una tableta' | translate" width="422" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="process-overview-title">
+  <div class="process-container overview-grid">
+    <div class="overview-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="process-overview-title" class="feature-title">{{ 'Creamos un modelo de factores y puntos' | translate }}</h2>
+      @for (paragraph of overview; track paragraph) {
+        <p>{{ paragraph | translate }}</p>
+      }
+    </div>
+    <img class="overview-photo" appReveal="left" [src]="assets + 'crecimiento-empresa.png'" [alt]="'Profesional mostrando resultados y oportunidades de crecimiento en su empresa' | translate" width="429" height="463" loading="lazy">
+  </div>
+</section>
+
+<section class="simple-section" aria-labelledby="process-simple-title">
+  <div class="process-container simple-grid">
+    <div class="simple-copy" appReveal="left">
+      <h2 id="process-simple-title" class="feature-title">{{ '¿Qué es, en términos simples?' | translate }}</h2>
+      <p>{{ 'Es poner orden, claridad y foco en la forma en que trabaja la empresa, para operar mejor hoy y crecer sin perder control mañana.' | translate }}</p>
+    </div>
+    <img class="simple-photo" appReveal="right" [appRevealDelay]="80" [src]="assets + 'operacion-control.png'" [alt]="'Representación de procesos conectados, calidad y control de la operación' | translate" width="316" height="289" loading="lazy">
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="process-benefits-title">
+  <div class="process-container">
+    <h2 id="process-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios clave para la organización' | translate }}</h2>
+  </div>
+  <ul class="process-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="process-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="process-closing">
+  <app-faq-list class="process-faq" [items]="questions" />
+  <app-meeting-request class="process-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Identifica dónde se frena tu operación" description="En CA Sistemas te ayudamos a detectar cuellos de botella, aclarar responsabilidades y priorizar mejoras para que tu equipo trabaje con menos demoras y reprocesos." />
+</div>

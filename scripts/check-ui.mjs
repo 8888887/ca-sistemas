@@ -43,6 +43,8 @@ const screenshot = async (name, fullPage = false) => {
 };
 try {
   await mkdir('artifacts', { recursive: true });
+  // Layout checks use reduced motion; check-motion-ui.mjs exercises real transitions.
+  await browser.page('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   await browser.page('Runtime.enable');
   await browser.page('Network.enable');
   await browser.page('Emulation.setDeviceMetricsOverride', { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
@@ -292,7 +294,7 @@ try {
   await waitFor(`document.querySelector('app-hostigamiento-laboral-sexual .module-label')?.textContent === 'Hostigamiento Laboral y Sexual'`);
   await browser.page('Emulation.setDeviceMetricsOverride', { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false });
   await browser.page('Page.navigate', { url: `${origin}/soluciones/pentesting` });
-  await waitFor(`document.querySelector('app-solution h1')?.textContent === 'Pentesting y Análisis de Vulnerabilidades'`);
+  await waitFor(`document.querySelector('app-pentesting h1')?.textContent.trim() === 'Encuentra y corrige antes que los atacantes lo hagan'`);
   await browser.page('Page.navigate', { url: `${origin}/no-existe` });
   await waitFor(`!!document.querySelector('app-not-found')`);
   await browser.page('Page.navigate', { url: origin });
@@ -343,15 +345,15 @@ try {
   await waitFor(`document.querySelector('.service-links').textContent.includes('Labor Audit')`);
   await screenshot('language-english-menu');
   await click('.service-links a');
-  await waitFor(`document.querySelector('app-solution h1')?.textContent.trim() === 'Labor Audit'`);
+  await waitFor(`document.querySelector('app-auditoria-laboral h1 span')?.textContent.trim() === 'Labor Audit'`);
   await waitFor(`document.title === 'Labor Audit | CA Sistemas'`);
   assert.equal(await browser.evaluate(`document.querySelector('#site-language').value`), 'en');
   await browser.page('Page.reload');
-  await waitFor(`document.querySelector('app-solution h1')?.textContent.trim() === 'Labor Audit'`);
+  await waitFor(`document.querySelector('app-auditoria-laboral h1 span')?.textContent.trim() === 'Labor Audit'`);
   assert.equal(await browser.evaluate(`document.documentElement.lang`), 'en', 'Language preference survives reload');
   const englishUrl = await browser.evaluate('location.href');
   await changeLanguage('es');
-  await waitFor(`document.querySelector('app-solution h1')?.textContent.trim() === 'Auditoría Laboral'`);
+  await waitFor(`document.querySelector('app-auditoria-laboral h1 span')?.textContent.trim() === 'Auditoría Laboral'`);
   await waitFor(`document.title === 'Auditoría Laboral | CA Sistemas'`);
   assert.equal(await browser.evaluate('location.href'), englishUrl, 'Changing language keeps the current route');
   assert.deepEqual(errors, [], 'No browser exceptions or missing assets');

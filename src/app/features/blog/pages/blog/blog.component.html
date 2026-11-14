@@ -1,2 +1,39 @@
-<section class="blog-hero dark-band"><div class="container"><h1>Blog</h1><p>{{ 'Recursos humanos, tecnología y gestión empresarial.' | translate }}</p></div></section>
-<section class="container blog-content"><h2>{{ 'Próximamente, más conocimientos para tu equipo' | translate }}</h2><p>{{ 'Estamos preparando las publicaciones de este espacio.' | translate }}</p><a class="button" routerLink="/">{{ 'Volver al inicio' | translate }}</a></section>
+<div class="container blog-content">
+  <section class="blog-intro" aria-labelledby="blog-title">
+    <div appReveal="left">
+      <h1 id="blog-title">{{ 'Blog de' | translate }} <span>CA Sistemas</span></h1>
+      <p>{{ 'Recursos para gestionar mejor tu equipo, tus procesos y tu tecnología.' | translate }}</p>
+    </div>
+    <label class="search" for="blog-search" appReveal="right">
+      {{ 'Buscar artículos' | translate }}
+      <input id="blog-search" type="search" [value]="query()" (input)="updateQuery($event)"
+        [placeholder]="'Ej. evaluación de desempeño' | translate" aria-controls="blog-articles">
+    </label>
+  </section>
+
+  <div class="filters" role="group" [attr.aria-label]="'Categorías' | translate">
+    @for (category of categories; track category.id) {
+      <button type="button" [attr.data-category]="category.id" [attr.aria-pressed]="selectedCategory() === category.id"
+        aria-controls="blog-articles" (click)="selectedCategory.set(category.id)">{{ category.label | translate }}</button>
+    }
+  </div>
+
+  <section id="blog-articles" class="article-grid" [class.filtered]="isFiltered()" [attr.aria-label]="'Artículos del blog' | translate">
+    @for (article of articles(); track article.id; let index = $index) {
+      <app-blog-article-card [article]="article" [featured]="!isFiltered() && index === 0"
+        [appReveal]="index % 2 === 0 ? 'left' : 'right'" (readArticle)="activeArticle.set($event)" />
+    }
+  </section>
+  @if (articles().length === 0) {
+    <p class="empty" role="status">{{ 'No encontramos artículos con esos filtros.' | translate }}</p>
+  }
+
+  <section class="blog-cta" appReveal="left" aria-labelledby="blog-contact-title">
+    <h2 id="blog-contact-title">{{ 'Conversemos sobre tu empresa' | translate }}</h2>
+    <a class="button" routerLink="/" fragment="contacto">{{ 'Agenda una reunión' | translate }}</a>
+  </section>
+</div>
+
+@if (activeArticle(); as article) {
+  <app-blog-article-dialog [article]="article" (closed)="activeArticle.set(null)" />
+}

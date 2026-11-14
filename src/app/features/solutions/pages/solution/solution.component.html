@@ -1,5 +1,5 @@
 <section class="solution-hero dark-band">
-  <div class="container">
+  <div class="container" appReveal="left">
     <a routerLink="/" class="back-link">{{ 'Inicio / Soluciones' | translate }}</a>
     <app-icon [name]="solution().icon" />
     <h1>{{ solution().label | translate }}</h1>
@@ -8,6 +8,6 @@
   </div>
 </section>
 <section id="consulta" class="container solution-contact">
-  <div><h2>{{ 'Una solución para' | translate }}<br><span>{{ 'tu empresa' | translate }}</span></h2><p>{{ 'Cuéntanos qué necesitas y nuestro equipo te ayudará a conocer esta solución.' | translate }}</p><a routerLink="/">{{ 'Volver al inicio' | translate }}</a></div>
-  <app-contact-form [whatsappUrl]="contact.whatsapp" />
+  <div appReveal="left"><h2>{{ 'Una solución para' | translate }}<br><span>{{ 'tu empresa' | translate }}</span></h2><p>{{ 'Cuéntanos qué necesitas y nuestro equipo te ayudará a conocer esta solución.' | translate }}</p><a routerLink="/">{{ 'Volver al inicio' | translate }}</a></div>
+  <app-contact-form appReveal="right" [appRevealDelay]="80" [whatsappUrl]="contact.whatsapp" />
 </section>

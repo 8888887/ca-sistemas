@@ -1,0 +1,40 @@
+<section class="law-hero dark-band" aria-labelledby="law-title">
+  <div class="law-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="law-title">{{ 'Implementación' | translate }}<br>{{ 'de la' | translate }} <span>{{ 'Ley N.° 30709' | translate }}</span></h1>
+      <p class="hero-lead">{{ 'Identifica brechas salariales y establece criterios claros para remunerar cada puesto.' | translate }}</p>
+      <p class="hero-description">{{ 'En CA Sistemas evaluamos los puestos y la compensación de tu empresa para ayudarte a tomar decisiones con criterios objetivos y promover la equidad salarial.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'implementacion-ley.png'" [alt]="'Profesionales revisando un modelo de organización y compensación de puestos' | translate" width="412" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<div class="law-features">
+  @for (feature of features; track feature.id; let position = $index) {
+    <section class="law-feature-section" [class.has-intro]="position === 0" [class.is-reversed]="position % 2 === 1" [attr.aria-labelledby]="'law-' + feature.id + '-title'">
+      <div class="law-container">
+        @if (position === 0) {
+          <h2 class="section-title" appReveal="left">{{ '¿Cómo ayudamos a tu' | translate }} <span>{{ 'Empresa' | translate }}</span>?</h2>
+        }
+        <div class="law-feature">
+          <div class="feature-copy" [appReveal]="position % 2 === 1 ? 'left' : 'right'" [appRevealDelay]="80">
+            @if (position === 0) {
+              <h3 class="feature-title" [id]="'law-' + feature.id + '-title'">{{ feature.title | translate }}</h3>
+            } @else {
+              <h2 class="feature-title" [id]="'law-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
+            }
+            <p>{{ feature.description | translate }}</p>
+          </div>
+          <img class="feature-photo" [class.is-portrait]="feature.portrait" [appReveal]="position % 2 === 1 ? 'right' : 'left'" [src]="assets + feature.image" [alt]="feature.imageAlt | translate" [width]="feature.portrait ? 316 : 475" [height]="feature.portrait ? 289 : 261" loading="lazy">
+        </div>
+      </div>
+    </section>
+  }
+</div>
+
+<div class="law-closing">
+  <div class="law-container">
+    <app-faq-list class="law-faq" [items]="questions" />
+    <app-meeting-request class="law-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Conoce el nivel de cumplimiento laboral de tu empresa" description="Conversa con nuestro equipo para identificar qué procesos puedes fortalecer en materia laboral y de seguridad y salud en el trabajo." />
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { TranslatePipe } from '../../../../shared/i18n/translate.pipe';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -7,11 +8,12 @@ import { ContactSectionComponent } from '../../components/contact-section/contac
 import { HeroComponent } from '../../components/hero/hero.component';
 import { ModuleCarouselComponent } from '../../components/module-carousel/module-carousel.component';
 import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
-import { CERTIFICATIONS, CLIENTS, SECTORS } from '../../data/home.data';
+import { CertificationsCarouselComponent } from '../../components/certifications-carousel/certifications-carousel.component';
+import { CLIENTS, SECTORS } from '../../data/home.data';
 
 @Component({
   selector: 'app-home',
-  imports: [TranslatePipe, RouterLink, HeroComponent, ContactSectionComponent, IconComponent, ModuleCarouselComponent, TestimonialsComponent],
+  imports: [RevealDirective, TranslatePipe, RouterLink, HeroComponent, ContactSectionComponent, IconComponent, ModuleCarouselComponent, TestimonialsComponent, CertificationsCarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,5 +22,4 @@ export class HomeComponent {
   protected readonly sectors = SECTORS;
   protected readonly clients = CLIENTS;
   protected readonly services = SERVICE_GROUPS;
-  protected readonly certifications = CERTIFICATIONS;
 }

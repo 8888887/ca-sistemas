@@ -1,0 +1,43 @@
+<section class="data-center-hero dark-band" aria-labelledby="data-center-title">
+  <div class="data-center-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="data-center-title"><span>{{ 'Seguridad, continuidad y rendimiento' | translate }}</span> {{ 'garantizado para tu infraestructura crítica' | translate }}</h1>
+      <p class="hero-description">{{ heroDescription | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'infraestructura-monitoreo.png'" [alt]="'Profesional monitoreando infraestructura y servicios en un data center' | translate" width="429" height="262" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="data-center-overview-title">
+  <div class="data-center-container">
+    <h2 id="data-center-overview-title" class="overview-title" appReveal="left">{{ '¿Qué significa alojarse en un Data Center Tier IV?' | translate }}</h2>
+  </div>
+  <img class="overview-media" appReveal="right" [src]="assets + 'hosting-empresarial.png'" [alt]="'Profesional con una tableta y gráficos digitales de infraestructura y servicios en la nube' | translate" width="790" height="434" loading="lazy">
+  <div class="overview-copy" appReveal="left" [appRevealDelay]="80">
+    @for (paragraph of overview; track paragraph) {
+      <p>{{ paragraph | translate }}</p>
+    }
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="data-center-benefits-title">
+  <div class="data-center-container">
+    <h2 id="data-center-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios de nuestro servicio de Hosting Empresarial' | translate }}</h2>
+  </div>
+  <ul class="data-center-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="data-center-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3>{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<div class="data-center-closing">
+  <app-faq-list class="data-center-faq" [items]="questions" />
+  <app-meeting-request class="data-center-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Protege la continuidad de tu infraestructura crítica" description="Cuéntanos qué infraestructura necesitas alojar y definamos una solución de hosting empresarial según las necesidades de tu empresa." />
+</div>

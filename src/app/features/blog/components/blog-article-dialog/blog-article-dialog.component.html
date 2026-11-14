@@ -1,0 +1,6 @@
+<dialog #articleDialog aria-labelledby="blog-article-title" aria-describedby="blog-article-body" (close)="closed.emit()">
+  <form method="dialog"><button class="button" type="submit" autofocus>{{ 'Cerrar' | translate }}</button></form>
+  <small>{{ categoryLabel() | translate }}</small>
+  <h2 id="blog-article-title">{{ article().title | translate }}</h2>
+  <p id="blog-article-body">{{ article().body | translate }}</p>
+</dialog>

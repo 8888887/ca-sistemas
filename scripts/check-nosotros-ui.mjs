@@ -12,12 +12,19 @@ browser.onEvent(event => {
 });
 const waitFor = async expression => {
   for (let attempt = 0; attempt < 80; attempt++) {
-    if (await browser.evaluate(expression)) return;
+    try {
+      if (await browser.evaluate(expression)) return;
+    } catch (error) {
+      if (!/navigated|Cannot find context|Execution context was destroyed/.test(error.message)) throw error;
+    }
     await new Promise(resolve => setTimeout(resolve, 100));
   }
   throw new Error(`Timed out: ${expression}`);
 };
-const click = selector => browser.evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);
+const click = async selector => {
+  await waitFor(`!!document.querySelector(${JSON.stringify(selector)})`);
+  await browser.evaluate(`document.querySelector(${JSON.stringify(selector)}).click()`);
+};
 const resize = async width => {
   await browser.page('Emulation.setDeviceMetricsOverride', { width, height: 900, deviceScaleFactor: 1, mobile: false });
   await browser.evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
@@ -29,6 +36,8 @@ const screenshot = async name => {
 };
 try {
   await mkdir('artifacts', { recursive: true });
+  // Layout checks use reduced motion; check-motion-ui.mjs exercises real transitions.
+  await browser.page('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   await browser.page('Runtime.enable');
   await browser.page('Network.enable');
   await resize(1366);
@@ -73,12 +82,13 @@ try {
   assert.ok(await browser.evaluate(`document.querySelector('#about-title').textContent.includes('Over 20 years')`));
   assert.equal(await browser.evaluate(`document.querySelector('app-purpose-card h3').textContent`), 'Mission');
   assert.equal(await browser.evaluate(`document.querySelectorAll('app-value-card h3')[5].textContent`), 'Security');
+  await browser.evaluate(`document.documentElement.dataset.uiReloadCheck = 'previous'`);
   await browser.page('Page.reload');
-  await waitFor(`document.querySelector('app-nosotros h1')?.textContent.includes('Over 20 years')`);
+  await waitFor(`!document.documentElement.dataset.uiReloadCheck && document.querySelector('app-nosotros h1')?.textContent.includes('Over 20 years')`);
   await resize(1366);
   for (const slug of ['auditoria-laboral', 'hr-analytics', 'ley-30709', 'payroll']) {
     await click(`app-about-service-card a[href="/soluciones/${slug}"]`);
-    await waitFor(`!!document.querySelector('app-solution h1')`);
+    await waitFor(`!!document.querySelector('app-solution h1, app-auditoria-laboral h1, app-ley-30709 h1, app-hr-analytics h1, app-payroll-service h1')`);
     await click('app-site-footer a[href="/nosotros"]');
     await waitFor(`!!document.querySelector('app-nosotros h1')`);
   }

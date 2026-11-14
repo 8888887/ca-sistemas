@@ -1,0 +1,33 @@
+<section class="consulting-hero dark-band" aria-labelledby="consulting-title">
+  <div class="consulting-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="consulting-title"><span>{{ 'Transformamos tecnología' | translate }}</span> {{ 'en' | translate }} <span class="hero-result">{{ 'resultados estratégicos' | translate }}</span></h1>
+      <p class="hero-description">{{ 'Impulsa el crecimiento de tu organización con una transformación digital completa y estratégica. Nuestro servicio está diseñado para modernizar tu área de TI, optimizar recursos, fortalecer el talento interno y asegurar un gobierno tecnológico sólido que convierta la innovación en resultados tangibles.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'consultoria-tecnologia.png'" [alt]="'Profesionales trabajando con herramientas digitales y diagramas de tecnología' | translate" width="410" height="234" fetchpriority="high">
+  </div>
+</section>
+
+<section class="benefits-section" aria-labelledby="consulting-benefits-title">
+  <div class="consulting-container">
+    <h2 id="consulting-benefits-title" class="benefits-title" appReveal="left">{{ 'Beneficios clave' | translate }}</h2>
+  </div>
+  <ul class="consulting-benefits">
+    @for (benefit of benefits; track benefit.id) {
+      <li class="consulting-benefit">
+        <img class="benefit-icon" appReveal="left" [src]="assets + 'icons/' + benefit.icon" alt="" width="114" height="114" loading="lazy">
+        <div class="benefit-copy" appReveal="right" [appRevealDelay]="80">
+          <h3 [class.compact-heading]="benefit.compactHeading">{{ benefit.title | translate }}</h3>
+          <p>{{ benefit.description | translate }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</section>
+
+<app-technology-experts />
+
+<div class="consulting-closing">
+  <app-faq-list class="consulting-faq" [items]="questions" />
+  <app-meeting-request class="consulting-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="¿Qué debería mejorar primero en tu área de TI?" description="Agenda una sesión de diagnóstico inicial sin compromiso con CA Sistemas. Conversemos sobre tus retos y cómo orientar tu inversión tecnológica a los objetivos de tu negocio." />
+</div>

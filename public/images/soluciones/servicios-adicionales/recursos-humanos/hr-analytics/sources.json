@@ -1,0 +1,10 @@
+{
+  "page": "/soluciones/hr-analytics",
+  "source": "Cuatro imágenes PNG originales proporcionadas por el usuario; sin modificaciones.",
+  "assets": [
+    { "file": "hr-analytics-empresas.png", "purpose": "Cabecera de HR Analytics para empresas" },
+    { "file": "indicadores-equipo.png", "purpose": "Indicadores, reportes y tendencias del equipo" },
+    { "file": "riesgos-capacitacion.png", "purpose": "Riesgos de rotación y necesidades de capacitación" },
+    { "file": "decisiones-datos.png", "purpose": "Decisiones y priorización basadas en datos" }
+  ]
+}

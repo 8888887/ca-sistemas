@@ -1,0 +1,12 @@
+{
+  "page": "/soluciones/encuesta-de-clima-laboral",
+  "source": "Fotografía PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "encuesta-clima-laboral.png", "purpose": "Cabecera del servicio" },
+    { "file": "icons/segura-confidencial.svg", "purpose": "Encuesta anónima, segura y confidencial" },
+    { "file": "icons/indicadores-clave.svg", "purpose": "Indicadores clave y personalizables" },
+    { "file": "icons/resultados-inmediatos.svg", "purpose": "Resultados inmediatos y reportes visuales" },
+    { "file": "icons/retencion-compromiso.svg", "purpose": "Retención y compromiso" },
+    { "file": "icons/bienestar-laboral.svg", "purpose": "Bienestar laboral" }
+  ]
+}

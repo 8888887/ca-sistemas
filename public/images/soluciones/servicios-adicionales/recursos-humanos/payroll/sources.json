@@ -1,0 +1,11 @@
+{
+  "page": "/soluciones/payroll",
+  "source": "Cinco imágenes PNG originales proporcionadas por el usuario; sin modificaciones.",
+  "assets": [
+    { "file": "payroll-empresas.png", "purpose": "Cabecera del servicio de payroll" },
+    { "file": "procesamiento-nomina.png", "purpose": "Automatización del procesamiento de nómina" },
+    { "file": "costos-laborales.png", "purpose": "Costos laborales y planificación" },
+    { "file": "acompanamiento-inicial.png", "purpose": "Acompañamiento y capacitación inicial" },
+    { "file": "pagos-puntuales.png", "purpose": "Confianza y pagos puntuales" }
+  ]
+}

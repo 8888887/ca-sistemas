@@ -1,0 +1,31 @@
+<section class="container certifications" aria-labelledby="certifications-title"
+  [attr.aria-roledescription]="'carrusel' | translate"
+  (mouseenter)="hovered.set(true)" (mouseleave)="hovered.set(false)"
+  (focusin)="focused.set(true)" (focusout)="onFocusOut($event)">
+  <h2 appReveal="left" id="certifications-title" class="section-title">{{ 'Nuestras Certificaciones' | translate }}</h2>
+  <div class="carousel-shell">
+    <div id="certifications-viewport" class="certifications-viewport">
+    <div class="certification-track" [class.is-animated]="animated()" [attr.data-position]="position()"
+      (transitionend)="onTransitionEnd($event)">
+      @for (group of slides; track $index; let duplicate = $last) {
+        @for (certificate of group; track certificate.name) {
+          <article class="certificate" [attr.aria-hidden]="duplicate ? 'true' : null">
+            <div class="certificate-image">
+              <img [src]="'/images/' + certificate.image" [alt]="duplicate ? '' : (certificate.name | translate)"
+                width="180" height="95" loading="lazy">
+            </div>
+            <p>{{ certificate.description | translate }}</p>
+          </article>
+        }
+      }
+    </div>
+    </div>
+    <button class="arrow previous" type="button" aria-controls="certifications-viewport"
+      [attr.aria-label]="'Certificación anterior' | translate" (click)="move(-1)"><app-icon name="arrow" /></button>
+    <button class="arrow next" type="button" aria-controls="certifications-viewport"
+      [attr.aria-label]="'Siguiente certificación' | translate" (click)="move(1)"><app-icon name="arrow" /></button>
+  </div>
+  <span class="carousel-position sr-only" role="status" [attr.aria-live]="rotating() ? 'off' : 'polite'">
+    {{ 'Posición del carrusel' | translate }}: {{ activeIndex() + 1 }} / {{ certificates.length }}
+  </span>
+</section>

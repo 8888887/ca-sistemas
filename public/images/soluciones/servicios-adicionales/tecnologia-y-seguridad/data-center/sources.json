@@ -1,0 +1,13 @@
+{
+  "page": "/soluciones/data-center",
+  "source": "Dos imágenes PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "infraestructura-monitoreo.png", "purpose": "Cabecera del servicio" },
+    { "file": "hosting-empresarial.png", "purpose": "Presentación del hosting empresarial" },
+    { "file": "icons/alta-disponibilidad.svg", "purpose": "Disponibilidad y continuidad operativa" },
+    { "file": "icons/seguridad-fisica.svg", "purpose": "Seguridad física y lógica" },
+    { "file": "icons/infraestructura-escalable.svg", "purpose": "Infraestructura escalable" },
+    { "file": "icons/monitoreo-soporte.svg", "purpose": "Monitoreo y soporte" },
+    { "file": "icons/ubicacion-estrategica.svg", "purpose": "Ubicación estratégica" }
+  ]
+}

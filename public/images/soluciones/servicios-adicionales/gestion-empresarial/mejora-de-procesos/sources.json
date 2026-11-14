@@ -1,0 +1,14 @@
+{
+  "page": "/soluciones/mejora-de-procesos",
+  "source": "Tres fotografías PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "revision-procesos.png", "purpose": "Cabecera del servicio" },
+    { "file": "crecimiento-empresa.png", "purpose": "Presentación del levantamiento de procesos" },
+    { "file": "operacion-control.png", "purpose": "Explicación de la organización y control de la operación" },
+    { "file": "icons/operacion-real.svg", "purpose": "Mejora continua desde la operación real" },
+    { "file": "icons/crecimiento.svg", "purpose": "Crecimiento ordenado" },
+    { "file": "icons/eficiencia-productividad.svg", "purpose": "Eficiencia y productividad" },
+    { "file": "icons/decisiones-gerenciales.svg", "purpose": "Decisiones gerenciales" },
+    { "file": "icons/organizacion.svg", "purpose": "Preparación para el cambio" }
+  ]
+}

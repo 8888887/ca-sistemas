@@ -1,0 +1,47 @@
+:host { display: block; background: var(--surface); }
+.signature-container { width: min(1180px, calc(100% - 128px)); margin-inline: auto; }
+.signature-hero { min-height: 519px; padding: 164px 0 80px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,1fr); gap: 16px; align-items: center; width: min(1180px, calc(100% - 112px)); }
+.hero-copy { min-width: 0; }
+h1 { margin: 0 0 28px; font-size: 44px; font-weight: 800; line-height: 1.34; letter-spacing: -.5px; }
+h1 span { color: #65cee9; }
+.hero-description { max-width: 500px; margin: 0; font-size: 15px; line-height: 1.65; text-align: justify; }
+.hero-photo { width: 100%; height: auto; aspect-ratio: 396/223; object-fit: cover; border-radius: 12px; }
+.signature-intro { padding: 46px 0 88px; }
+.signature-intro h2 { margin: 0; font-size: 29px; font-weight: 600; line-height: 1.38; letter-spacing: -.5px; text-align: center; }
+.benefits-title { max-width: 740px; margin: 0 auto; font-family: Arial, sans-serif; font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -.5px; text-align: center; }
+.signature-benefits { display: grid; gap: 50px; width: min(650px, calc(100% - 80px)); margin: 56px auto 0; padding: 0; list-style: none; }
+.signature-benefit { display: grid; grid-template-columns: 114px minmax(0,1fr); gap: 50px; align-items: center; min-height: 114px; }
+.benefit-icon { width: 114px; height: 114px; }
+.benefit-copy { min-width: 0; font-family: Arial, sans-serif; }
+.benefit-copy h3 { margin: 0 0 8px; font-size: 20px; font-weight: 700; line-height: 1.3; }
+.benefit-copy p { margin: 0; font-size: 18px; line-height: 1.4; text-align: justify; }
+.signature-closing { padding: 68px 0 40px; }
+.signature-faq { --faq-heading-gap: 30px; max-width: 1060px; margin-inline: auto; }
+.signature-meeting { --meeting-copy-ratio: 1.7fr; --meeting-gap: 16px; --meeting-heading-size: 32px; width: min(1060px, calc(100% - 232px)); margin: 76px auto 0; }
+@media (max-width: 1100px) { h1 { font-size: 40px; } .signature-faq { max-width: 820px; } }
+@media (max-width: 900px) {
+  .signature-container, .hero-grid { width: calc(100% - 64px); }
+  h1 { font-size: 34px; }
+  .signature-intro h2 { font-size: 26px; }
+  .signature-benefits { width: calc(100% - 80px); }
+  .signature-meeting { width: calc(100% - 64px); }
+}
+@media (max-width: 760px) {
+  .signature-container, .hero-grid, .signature-meeting { width: calc(100% - 40px); }
+  .signature-hero { min-height: 0; padding: 140px 0 40px; }
+  .hero-grid { grid-template-columns: minmax(0,1fr); gap: 32px; }
+  h1 { margin-bottom: 20px; font-size: 36px; line-height: 1.15; }
+  .hero-description, .benefit-copy p { text-align: left; }
+  .signature-intro { padding: 36px 0 40px; }
+  .signature-intro h2 { font-size: 24px; }
+  .benefits-title { font-size: 28px; }
+  .signature-benefits { gap: 32px; width: calc(100% - 40px); margin-top: 36px; }
+  .signature-benefit { grid-template-columns: 80px minmax(0,1fr); gap: 20px; align-items: start; min-height: 0; }
+  .benefit-icon { width: 80px; height: 80px; }
+  .benefit-copy h3 { font-size: 18px; }
+  .benefit-copy p { font-size: 14px; }
+  .signature-closing { padding: 48px 0; }
+  .signature-meeting { margin-top: 40px; }
+}
+@media (max-width: 420px) { h1 { font-size: 32px; } }

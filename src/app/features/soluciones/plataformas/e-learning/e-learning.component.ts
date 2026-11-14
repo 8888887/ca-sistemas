@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CONTACT } from '../../../../core/config/contact.config';
 import { PLATFORM_SOLUTIONS } from '../../../../core/config/solutions.data';
@@ -9,7 +10,7 @@ import { LEARNING_FAQS, LEARNING_FEATURES } from './data/e-learning.data';
 
 @Component({
   selector: 'app-e-learning',
-  imports: [TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
+  imports: [RevealDirective, TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
   templateUrl: './e-learning.component.html',
   styleUrl: './e-learning.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

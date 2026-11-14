@@ -22,22 +22,16 @@
 .service-card h3 { margin: 14px 0 0; font-size: 20px; line-height: 1.2; }
 .migration { display: flex; align-items: center; justify-content: center; gap: 24px; padding: 40px 20px; font-size: 19.2px; }
 .migration-link { display: inline-flex; gap: 15px; align-items: center; padding: 10px 15px; border-radius: 14px; background: linear-gradient(100deg,#00aeec,#004cc5); text-decoration: none; }
-.er-logo { font-size: 38.4px; font-weight: 750; letter-spacing: -7px; padding-right: 7px; line-height: 1.1; }
+.er-logo { display: block; flex-shrink: 0; width: 59px; height: auto; object-fit: contain; }
 .migration-link app-icon { width: 35px; height: 35px; border: 1px solid white; border-radius: 999px; padding: 5px; }
-.certifications { padding-block: 50px 65px; }
-.certification-grid { display: grid; grid-template-columns: repeat(6,1fr); gap: 28px; padding-top: 25px; }
-.certificate-image { display: flex; justify-content: center; align-items: center; height: 105px; }
-.certificate-image img { max-height: 95px; object-fit: contain; }
-.certification-grid p { font-size: 10.88px; line-height: 1.7; color: #737b85; text-align: center; }
 @media (max-width: 1200px) { .service-grid { gap: 96px; } }
-@media (max-width: 1000px) { .service-grid { padding-inline: 30px; gap: 64px; } .certification-grid { gap: 18px; } }
+@media (max-width: 1000px) { .service-grid { padding-inline: 30px; gap: 64px; } }
 @media (max-width: 760px) {
   .sector-grid { display: flex; gap: 12px; padding: 0 0 8px; overflow-x: auto; scroll-snap-type: x mandatory; } .sector-grid figure { flex: 0 0 38%; scroll-snap-align: start; }
   .client-grid { grid-template-columns: repeat(2,1fr); gap: 2px 8px; }
   .stats { padding-block: 28px; } .stats-grid b { font-size: 17.6px; } .stats-grid span { font-size: 10.4px; } .stats-grid .partners b { font-size: 18.4px; }
   .service-grid { gap: 15px; padding: 0; } .service-card { padding: 25px 10px; min-height: 175px; } .service-card h3 { font-size: 14.4px; }
-  .migration { gap: 12px; font-size: 14.4px; } .migration-link { gap: 10px; } .er-logo { font-size: 28.8px; } .migration-link app-icon { width: 26px; height: 26px; }
-  .certification-grid { grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .migration { gap: 12px; font-size: 14.4px; } .migration-link { gap: 10px; } .er-logo { width: 44px; } .migration-link app-icon { width: 26px; height: 26px; }
 }
 @media (max-width: 420px) { .service-grid { grid-template-columns: 1fr; } .service-card { min-height: 150px; } .service-card h3 { font-size: 17.6px; } }
 @media (max-width: 1100px) { .sector-grid figcaption { font-size: 16px; } .stats-grid strong { font-size: 64px; } }

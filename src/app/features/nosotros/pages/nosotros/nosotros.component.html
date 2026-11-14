@@ -1,38 +1,38 @@
 <section class="about-hero" aria-labelledby="about-title">
-  <h1 id="about-title">{{ 'Más de 20 años impulsando' | translate }}<br> {{ 'la eficiencia de' | translate }} <span>{{ 'tu empresa' | translate }}</span></h1>
-  <img class="hero-image" [src]="assets + 'equipo-ca-sistemas.png'" [alt]="'Equipo de CA Sistemas Empresariales' | translate" width="1043" height="594" fetchpriority="high">
+  <h1 id="about-title" appReveal="left">{{ 'Más de 20 años impulsando' | translate }}<br> {{ 'la eficiencia de' | translate }} <span>{{ 'tu empresa' | translate }}</span></h1>
+  <img class="hero-image" appReveal="right" [appRevealDelay]="80" [src]="assets + 'equipo-ca-sistemas.png'" [alt]="'Equipo de CA Sistemas Empresariales' | translate" width="1043" height="594" fetchpriority="high">
 </section>
 
 <section class="story" aria-labelledby="story-title">
-  <div class="story-copy">
+  <div class="story-copy" appReveal="left">
     <h2 id="story-title" class="section-title">{{ 'Comprometidos con' | translate }} <span>{{ 'Recursos Humanos' | translate }}</span></h2>
     <p><strong>CASISTEMAS</strong> {{ history | translate }}</p>
   </div>
   <div class="purpose-grid">
-    @for (purpose of purposes; track purpose.title) {<app-purpose-card [purpose]="purpose" />}
+    @for (purpose of purposes; track purpose.title; let position = $index) {<app-purpose-card [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position * 80" [purpose]="purpose" />}
   </div>
 </section>
 
 <section class="team-section" aria-labelledby="team-title">
-  <h2 id="team-title" class="section-title">{{ 'Servicios para' | translate }} <span>{{ 'Áreas de RR.HH.' | translate }}</span></h2>
+  <h2 appReveal="left" id="team-title" class="section-title">{{ 'Servicios para' | translate }} <span>{{ 'Áreas de RR.HH.' | translate }}</span></h2>
   <div class="team-gallery">
-    @for (image of teamImages; track image.file) {
-      <img [src]="assets + image.file" [alt]="image.alt | translate" width="251" height="335" loading="lazy">
+    @for (image of teamImages; track image.file; let position = $index) {
+      <img [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position * 80" [src]="assets + image.file" [alt]="image.alt | translate" width="251" height="335" loading="lazy">
     }
   </div>
   <div class="team-copy">
-    <p>{{ experience | translate }}</p>
-    <p>{{ differentiators | translate }}</p>
+    <p appReveal="left">{{ experience | translate }}</p>
+    <p appReveal="right" [appRevealDelay]="80">{{ differentiators | translate }}</p>
   </div>
 </section>
 
 <section class="values-grid" [attr.aria-label]="'Nuestros valores' | translate">
-  @for (value of values; track value.title) {<app-value-card [value]="value" />}
+  @for (value of values; track value.title; let position = $index) {<app-value-card [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position % 3 * 80" [value]="value" />}
 </section>
 
 <section class="additional-services" aria-labelledby="about-services-title">
-  <h2 id="about-services-title" class="section-title"><span>{{ 'Servicios adicionales' | translate }}</span></h2>
+  <h2 appReveal="left" id="about-services-title" class="section-title"><span>{{ 'Servicios adicionales' | translate }}</span></h2>
   <div class="services-grid">
-    @for (service of services; track service.slug) {<app-about-service-card [service]="service" />}
+    @for (service of services; track service.slug; let position = $index) {<app-about-service-card [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position % 2 * 80" [service]="service" />}
   </div>
 </section>

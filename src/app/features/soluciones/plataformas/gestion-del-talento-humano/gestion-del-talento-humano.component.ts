@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CONTACT } from '../../../../core/config/contact.config';
 import { PLATFORM_SOLUTIONS } from '../../../../core/config/solutions.data';
@@ -9,7 +10,7 @@ import { TALENT_FAQS, TALENT_FEATURES } from './data/gestion-del-talento-humano.
 
 @Component({
   selector: 'app-gestion-talento-humano',
-  imports: [TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
+  imports: [RevealDirective, TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
   templateUrl: './gestion-del-talento-humano.component.html',
   styleUrl: './gestion-del-talento-humano.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

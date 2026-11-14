@@ -1,0 +1,8 @@
+dialog { width: min(610px, calc(100% - 32px)); max-width: 610px; max-height: calc(100% - 48px); padding: 26px; overflow: auto; border: 1px solid var(--blog-line); border-radius: 18px; background: white; color: var(--blog-navy); box-shadow: var(--shadow); }
+dialog::backdrop { background: #082440a8; }
+form { display: flex; justify-content: end; margin-bottom: 16px; }
+form .button { background: var(--blog-navy); }
+small { color: #006684; font-weight: 750; }
+h2 { margin: 8px 0 0; font-size: 28px; line-height: 1.2; letter-spacing: -.8px; }
+p { font-size: 16px; line-height: 1.6; }
+@media (max-width: 460px) { dialog { padding: 20px; } h2 { font-size: 24px; } }

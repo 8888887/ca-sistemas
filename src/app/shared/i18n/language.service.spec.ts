@@ -38,12 +38,18 @@ describe('LanguageService', () => {
   });
 
   it('works even when browser storage is blocked', () => {
-    spyOn(Storage.prototype, 'getItem').and.throwError('Storage blocked');
-    spyOn(Storage.prototype, 'setItem').and.throwError('Storage blocked');
-    const service = TestBed.inject(LanguageService);
-    expect(service.language()).toBe('es');
-    expect(() => service.setLanguage('en')).not.toThrow();
-    expect(service.language()).toBe('en');
+    const getItem = spyOn(Storage.prototype, 'getItem').and.throwError('Storage blocked');
+    const setItem = spyOn(Storage.prototype, 'setItem').and.throwError('Storage blocked');
+    try {
+      const service = TestBed.inject(LanguageService);
+      expect(service.language()).toBe('es');
+      expect(() => service.setLanguage('en')).not.toThrow();
+      expect(service.language()).toBe('en');
+    } finally {
+      // Allow afterEach to restore any language left by another test suite.
+      getItem.and.callThrough();
+      setItem.and.callThrough();
+    }
   });
 
   it('interpolates visitor data without translating the visitor’s own text', () => {

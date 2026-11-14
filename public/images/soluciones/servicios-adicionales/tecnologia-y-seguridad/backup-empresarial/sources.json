@@ -1,0 +1,13 @@
+{
+  "page": "/soluciones/backup-empresarial",
+  "source": "Dos imágenes PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "backup-servidores.png", "purpose": "Cabecera del servicio" },
+    { "file": "respaldo-informacion.png", "purpose": "Presentación del backup profesional" },
+    { "file": "icons/copias-automaticas.svg", "purpose": "Copias programadas" },
+    { "file": "icons/almacenamiento-seguro.svg", "purpose": "Almacenamiento seguro" },
+    { "file": "icons/recuperacion-rapida.svg", "purpose": "Recuperación de la información" },
+    { "file": "icons/compatible-con-bases-datos.svg", "purpose": "Compatibilidad con motores de bases de datos" },
+    { "file": "icons/cumplimiento-normativo.svg", "purpose": "Cumplimiento normativo" }
+  ]
+}

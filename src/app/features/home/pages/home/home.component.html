@@ -5,34 +5,34 @@
 <app-module-carousel />
 
 <section class="container sectors" aria-labelledby="sectors-title">
-  <h2 id="sectors-title" class="section-title">{{ 'Nuestros' | translate }} <span>{{ 'sectores' | translate }}</span></h2>
+  <h2 appReveal="left" id="sectors-title" class="section-title">{{ 'Nuestros' | translate }} <span>{{ 'sectores' | translate }}</span></h2>
   <div class="sector-grid">
-    @for (sector of sectors; track sector.name) {
-      <figure><img [src]="'/images/' + sector.image" alt="" width="300" height="450" loading="lazy"><figcaption>{{ sector.name | translate }}</figcaption></figure>
+    @for (sector of sectors; track sector.name; let position = $index) {
+      <figure [appReveal]="position < 3 ? 'left' : 'right'" [appRevealDelay]="position % 3 * 80"><img [src]="'/images/' + sector.image" alt="" width="300" height="450" loading="lazy"><figcaption>{{ sector.name | translate }}</figcaption></figure>
     }
   </div>
 </section>
 
 <section class="container clients" aria-labelledby="clients-title">
-  <h2 id="clients-title" class="section-title">{{ 'Empresas líderes que confían en' | translate }}<br>{{ 'nuestra plataforma de RR.HH' | translate }}</h2>
+  <h2 appReveal="left" id="clients-title" class="section-title">{{ 'Empresas líderes que confían en' | translate }}<br>{{ 'nuestra plataforma de RR.HH' | translate }}</h2>
   <div class="client-grid">
-    @for (client of clients; track client.name) { <img [src]="'/images/' + client.image" [alt]="client.name" width="394" height="147" loading="lazy"> }
+    @for (client of clients; track client.name; let position = $index) { <img [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position % 3 * 80" [src]="'/images/' + client.image" [alt]="client.name" width="394" height="147" loading="lazy"> }
   </div>
 </section>
 
 <section id="nosotros" class="stats dark-band" [attr.aria-label]="'Nuestra experiencia' | translate">
   <div class="container stats-grid">
-    <p><strong>+ 200</strong><b>{{ 'empresas' | translate }}</b><span>{{ 'confían en nosotros' | translate }}</span></p>
-    <p><strong>+ 25</strong><b>{{ 'años' | translate }}</b><span>{{ 'de experiencia' | translate }}</span></p>
-    <p class="partners"><b>{{ 'Aliados' | translate }}<br>{{ 'estratégicos' | translate }}</b><span>{{ 'en su crecimiento' | translate }}</span></p>
+    <p appReveal="left"><strong>+ 200</strong><b>{{ 'empresas' | translate }}</b><span>{{ 'confían en nosotros' | translate }}</span></p>
+    <p appReveal="left" [appRevealDelay]="80"><strong>+ 25</strong><b>{{ 'años' | translate }}</b><span>{{ 'de experiencia' | translate }}</span></p>
+    <p class="partners" appReveal="right" [appRevealDelay]="160"><b>{{ 'Aliados' | translate }}<br>{{ 'estratégicos' | translate }}</b><span>{{ 'en su crecimiento' | translate }}</span></p>
   </div>
 </section>
 
 <section class="container services" aria-labelledby="services-title">
-  <h2 id="services-title" class="section-title"><span>{{ 'Servicios adicionales' | translate }}</span></h2>
+  <h2 appReveal="left" id="services-title" class="section-title"><span>{{ 'Servicios adicionales' | translate }}</span></h2>
   <div class="service-grid">
-    @for (service of services; track service.id) {
-      <a class="service-card" [routerLink]="['/soluciones', service.items[0].slug]">
+    @for (service of services; track service.id; let position = $index) {
+      <a class="service-card" [appReveal]="position % 2 === 0 ? 'left' : 'right'" [appRevealDelay]="position * 80" [routerLink]="['/soluciones', service.items[0].slug]">
         <app-icon [name]="service.icon" /><h3>{{ service.label | translate }}</h3>
       </a>
     }
@@ -42,14 +42,7 @@
 <app-testimonials />
 
 <section class="migration dark-band" [attr.aria-label]="'Migra a Empresarial RH' | translate">
-  <span>{{ 'Migra a' | translate }}</span><a class="migration-link" routerLink="/" fragment="contacto"><span class="er-logo">ER</span><strong>Empresarial RH</strong><app-icon name="arrow" /></a>
+  <span appReveal="left">{{ 'Migra a' | translate }}</span><a class="migration-link" appReveal="right" [appRevealDelay]="80" routerLink="/" fragment="contacto"><img class="er-logo" src="/images/logo-empresarial.png" alt="" width="59" height="43" loading="lazy"><strong>Empresarial RH</strong><app-icon name="arrow" /></a>
 </section>
 
-<section class="container certifications" aria-labelledby="certifications-title">
-  <h2 id="certifications-title" class="section-title">{{ 'Nuestras Certificaciones' | translate }}</h2>
-  <div class="certification-grid">
-    @for (certificate of certifications; track certificate.name) {
-      <article><div class="certificate-image"><img [src]="'/images/' + certificate.image" [alt]="certificate.name | translate" loading="lazy"></div><p>{{ certificate.description | translate }}</p></article>
-    }
-  </div>
-</section>
+<app-certifications-carousel />

@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CONTACT } from '../../../../core/config/contact.config';
 import { PLATFORM_SOLUTIONS } from '../../../../core/config/solutions.data';
@@ -8,7 +9,7 @@ import { SAFETY_FAQS, SAFETY_FEATURES } from './data/salud-y-seguridad-ocupacion
 
 @Component({
   selector: 'app-salud-seguridad-ocupacional',
-  imports: [TranslatePipe, FaqListComponent, MeetingRequestComponent],
+  imports: [RevealDirective, TranslatePipe, FaqListComponent, MeetingRequestComponent],
   templateUrl: './salud-y-seguridad-ocupacional.component.html',
   styleUrl: './salud-y-seguridad-ocupacional.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

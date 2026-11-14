@@ -1,0 +1,43 @@
+<section class="payroll-service-hero dark-band" aria-labelledby="payroll-service-title">
+  <div class="payroll-service-container hero-grid">
+    <div class="hero-copy" appReveal="left">
+      <h1 id="payroll-service-title"><span>{{ 'Payroll y procesamiento' | translate }}</span><br>{{ 'de planillas' | translate }}</h1>
+      <p class="hero-lead">{{ 'Procesa tu nómina en menos tiempo y con mayor precisión.' | translate }}</p>
+      <p class="hero-description">{{ 'Con el servicio de payroll de CA Sistemas, respaldado por Empresarial-RH, automatiza el proceso desde la recopilación de los datos de asistencia hasta la generación de planillas.' | translate }}</p>
+    </div>
+    <img class="hero-photo" appReveal="right" [appRevealDelay]="160" [src]="assets + 'payroll-empresas.png'" [alt]="'Profesional gestionando registros de asistencia y planillas en Empresarial-RH' | translate" width="412" height="251" fetchpriority="high">
+  </div>
+</section>
+
+<section class="overview-section" aria-labelledby="payroll-service-overview-title">
+  <div class="payroll-service-container overview-grid">
+    <div class="feature-copy" appReveal="right" [appRevealDelay]="80">
+      <h2 id="payroll-service-overview-title">{{ 'Automatiza el procesamiento de tu nómina' | translate }}</h2>
+      <ul class="benefit-list">
+        @for (benefit of benefits; track benefit) {
+          <li><app-icon name="check" /><span>{{ benefit | translate }}</span></li>
+        }
+      </ul>
+    </div>
+    <img class="feature-photo" appReveal="left" [src]="assets + 'procesamiento-nomina.png'" [alt]="'Equipo revisando una planilla y sus registros en una computadora portátil' | translate" width="475" height="261" loading="lazy">
+  </div>
+</section>
+
+@for (feature of features; track feature.id; let position = $index) {
+  <section class="payroll-service-feature-section" [class.is-first]="position === 0" [class.is-reversed]="position % 2 === 0" [attr.aria-labelledby]="'payroll-service-' + feature.id + '-title'">
+    <div class="payroll-service-container payroll-service-feature">
+      <div class="feature-copy" [appReveal]="position % 2 === 0 ? 'left' : 'right'">
+        <h2 [id]="'payroll-service-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
+        <p>{{ feature.description | translate }}</p>
+      </div>
+      <img class="feature-photo" [appReveal]="position % 2 === 0 ? 'right' : 'left'" [appRevealDelay]="80" [src]="assets + feature.image" [alt]="feature.imageAlt | translate" [width]="feature.width" [height]="feature.height" loading="lazy">
+    </div>
+  </section>
+}
+
+<div class="payroll-service-closing">
+  <div class="payroll-service-container">
+    <app-faq-list class="payroll-service-faq" [items]="questions" />
+    <app-meeting-request class="payroll-service-meeting" [platforms]="services" [whatsappUrl]="contact.whatsapp" selectionLabel="¿Qué servicio necesitas?" selectionError="Selecciona un servicio." heading="Conversemos sobre la nómina de tu empresa" description="Cuéntanos cómo procesas tus planillas y descubre cómo CA Sistemas puede ayudarte a reducir el tiempo de procesamiento y mejorar la precisión de tus pagos." />
+  </div>
+</div>

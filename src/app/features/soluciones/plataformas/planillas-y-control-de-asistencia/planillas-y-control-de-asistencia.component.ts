@@ -1,3 +1,4 @@
+import { RevealDirective } from '../../../../shared/directives/reveal/reveal.directive';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CONTACT } from '../../../../core/config/contact.config';
 import { PLATFORM_SOLUTIONS } from '../../../../core/config/solutions.data';
@@ -9,7 +10,7 @@ import { ATTENDANCE_BENEFITS, PAYROLL_FAQS, REPORTING_BENEFITS } from './data/pl
 
 @Component({
   selector: 'app-planillas-control-asistencia',
-  imports: [TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
+  imports: [RevealDirective, TranslatePipe, FaqListComponent, IconComponent, MeetingRequestComponent],
   templateUrl: './planillas-y-control-de-asistencia.component.html',
   styleUrl: './planillas-y-control-de-asistencia.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

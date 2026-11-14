@@ -1,0 +1,13 @@
+{
+  "page": "/soluciones/evaluacion-de-desempeno",
+  "source": "Dos fotografías PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "evaluacion-digital.png", "purpose": "Cabecera del servicio" },
+    { "file": "evaluacion-equipo.png", "purpose": "Explicación de la evaluación de desempeño" },
+    { "file": "icons/indicadores-claros.svg", "purpose": "Indicadores claros y personalizables" },
+    { "file": "icons/seguimiento-continuo.svg", "purpose": "Seguimiento continuo" },
+    { "file": "icons/reportes-analiticas.svg", "purpose": "Reportes y analítica inteligente" },
+    { "file": "icons/clima-laboral.svg", "purpose": "Mejora del clima laboral" },
+    { "file": "icons/normativas-locales.svg", "purpose": "Normativas locales" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "page": "/soluciones/firmas-digitales-certificadas",
+  "source": "Fotografía PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "firma-digital-certificada.png", "purpose": "Cabecera del servicio" },
+    { "file": "icons/validez-juridica.svg", "purpose": "Validez jurídica certificada" },
+    { "file": "icons/corporativos-rr-hh.svg", "purpose": "Entornos corporativos y de Recursos Humanos" },
+    { "file": "icons/integracion-rapida.svg", "purpose": "Integración y soporte" },
+    { "file": "icons/automatiza-digitaliza.svg", "purpose": "Automatización y digitalización" },
+    { "file": "icons/seguridad-avanzada.svg", "purpose": "Seguridad y trazabilidad" }
+  ]
+}

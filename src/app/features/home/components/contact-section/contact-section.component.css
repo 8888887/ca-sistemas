@@ -4,9 +4,7 @@
 .benefits { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 32px; }
 .benefits > div { display: flex; gap: 9px; align-items: center; }
 .benefits strong { font-size: 11.52px; line-height: 1.5; color: #004169; }
-.benefit-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 999px; background: #0753e9; color: white; flex-shrink: 0; }
-.benefit-icon.purple { background: #813df3; }
-.benefit-icon.green { background: #59dc00; }
+.benefit-icon { display: block; width: 44px; height: 44px; object-fit: contain; flex-shrink: 0; }
 @media (max-width: 1000px) { .benefits { gap: 6px; } .benefits strong { font-size: 10.08px; } .benefit-icon { width: 37px; height: 37px; } }
 @media (max-width: 760px) { .introduction { grid-template-columns: minmax(0,1fr); } .benefits { margin-top: 20px; gap: 12px; } .benefits strong { font-size: 10.88px; } }
 @media (max-width: 420px) {

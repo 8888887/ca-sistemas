@@ -1,0 +1,9 @@
+{
+  "page": "/soluciones/auditoria-laboral",
+  "source": "Tres imágenes PNG originales proporcionadas por el usuario; sin modificaciones.",
+  "assets": [
+    { "file": "auditoria-empresas.png", "purpose": "Cabecera de Auditoría Laboral para empresas" },
+    { "file": "inspeccion-sunafil.png", "purpose": "Preparación para una inspección de SUNAFIL" },
+    { "file": "beneficios-auditoria.png", "purpose": "Beneficios de una auditoría laboral" }
+  ]
+}

@@ -1,6 +1,6 @@
 :host { display: block; }
-.meeting-cta { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: 48px; align-items: center; padding: 38px 44px; border-radius: 22px; }
-h2 { margin: 0 0 22px; font-size: 34px; font-weight: 750; line-height: 1.06; letter-spacing: -.5px; }
+.meeting-cta { display: grid; grid-template-columns: minmax(0,var(--meeting-copy-ratio, 1.5fr)) minmax(0,1fr); gap: var(--meeting-gap, 48px); align-items: center; padding: 38px var(--meeting-padding-inline, 44px); border-radius: 22px; }
+h2 { max-width: var(--meeting-heading-width, none); margin: 0 0 22px; font-size: var(--meeting-heading-size, 34px); font-weight: 750; line-height: 1.06; letter-spacing: -.5px; }
 .meeting-copy > p { margin: 0; font-size: 16px; line-height: 1.65; text-align: justify; }
 form { display: flex; flex-direction: column; gap: 10px; min-width: 0; max-width: 220px; }
 .meeting-field { position: relative; }

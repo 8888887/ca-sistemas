@@ -1,0 +1,13 @@
+{
+  "page": "/soluciones/gestion-de-base-de-datos",
+  "source": "Dos imágenes PNG y cinco iconos SVG originales proporcionados por el usuario, sin modificaciones.",
+  "assets": [
+    { "file": "administracion-sql-server.png", "purpose": "Cabecera del servicio" },
+    { "file": "sql-server.png", "purpose": "Presentación de la gestión de SQL Server" },
+    { "file": "icons/mantenimiento-preventivo.svg", "purpose": "Administración y mantenimiento preventivo" },
+    { "file": "icons/seguridad-respaldo.svg", "purpose": "Seguridad y respaldo" },
+    { "file": "icons/consultas-respaldo.svg", "purpose": "Optimización de consultas y estructuras" },
+    { "file": "icons/recuperacion-desastres.svg", "purpose": "Disponibilidad y recuperación" },
+    { "file": "icons/soporte-tecnico.svg", "purpose": "Soporte técnico" }
+  ]
+}

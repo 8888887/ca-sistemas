@@ -1,12 +1,12 @@
 <section class="harassment-hero dark-band" aria-labelledby="harassment-title">
   <div class="harassment-container">
-    <p class="module-label">{{ 'Hostigamiento Laboral y Sexual' | translate }}</p>
+    <p class="module-label" appReveal="left">{{ 'Hostigamiento Laboral y Sexual' | translate }}</p>
     <div class="harassment-hero-content">
-      <div class="hero-copy">
+      <div class="hero-copy" appReveal="left" [appRevealDelay]="80">
         <h1 id="harassment-title"><span>{{ 'Hostigamiento laboral y sexual:' | translate }}</span> {{ 'cómo identificarlo, prevenirlo y actuar ante un caso' | translate }}</h1>
         <p><strong>{{ 'En Empresarial-RH,' | translate }}</strong> {{ 'tu empresa puede prevenir conductas inapropiadas, gestionar incidentes y promover un ambiente de trabajo seguro y respetuoso.' | translate }}</p>
       </div>
-      <img class="platform-preview" [src]="assets + 'plataforma-hostigamiento.png'" [alt]="'Vista del módulo de Hostigamiento Laboral de Empresarial-RH' | translate" width="444" height="260" fetchpriority="high">
+      <img class="platform-preview" appReveal="right" [appRevealDelay]="160" [src]="assets + 'plataforma-hostigamiento.png'" [alt]="'Vista del módulo de Hostigamiento Laboral de Empresarial-RH' | translate" width="444" height="260" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -15,7 +15,7 @@
   <div class="harassment-features">
     @for (feature of features; track feature.id; let position = $index) {
       <section class="harassment-feature" [class.is-reversed]="position % 2 === 1" [attr.aria-labelledby]="'harassment-' + feature.id + '-title'">
-        <div class="feature-copy">
+        <div class="feature-copy" [appReveal]="position % 2 === 1 ? 'right' : 'left'">
           <h2 [id]="'harassment-' + feature.id + '-title'">{{ feature.title | translate }}</h2>
           <ul class="benefit-list">
             @for (benefit of feature.benefits; track benefit) {
@@ -23,7 +23,7 @@
             }
           </ul>
         </div>
-        <img [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
+        <img [appReveal]="position % 2 === 1 ? 'left' : 'right'" [appRevealDelay]="80" [src]="assets + feature.image" [alt]="feature.imageAlt | translate" width="445" height="251" loading="lazy">
       </section>
     }
   </div>

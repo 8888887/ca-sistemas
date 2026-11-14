@@ -2,6 +2,91 @@
   "origin": "https://casistemas.com",
   "assets": [
     {
+      "file": "blog/planillas-y-asistencia.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/pentesting.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/backup-empresarial.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/firmas-digitales.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/sql-server.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/hr-analytics.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "blog/evaluacion-de-desempeno.webp",
+      "source": "Imagen WebP embebida en Blog_CA_Sistemas.html, proporcionado por el usuario.",
+      "processing": "Extraída a un archivo local sin modificar los bytes originales."
+    },
+    {
+      "file": "home/certifications/ministerio-justicia.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/certifications/indecopi.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/certifications/iso-27001.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/certifications/sap-business-one.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/certifications/microsoft-dynamics.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/certifications/oracle.png",
+      "source": "PNG original proporcionado por el usuario para Nuestras Certificaciones del Home.",
+      "processing": "Conservado sin modificaciones, con sus proporciones y transparencia originales."
+    },
+    {
+      "file": "home/benefits/procesos-eficientes.svg",
+      "source": "SVG original proporcionado por el usuario para el beneficio Procesos más eficientes del Home.",
+      "processing": "Conservado sin modificaciones."
+    },
+    {
+      "file": "home/benefits/colaboradores.svg",
+      "source": "SVG original proporcionado por el usuario para el beneficio + 100 mil colaboradores del Home.",
+      "processing": "Conservado sin modificaciones."
+    },
+    {
+      "file": "home/benefits/empresa-crecimiento.svg",
+      "source": "SVG original proporcionado por el usuario para el beneficio Tu empresa en crecimiento del Home.",
+      "processing": "Conservado sin modificaciones."
+    },
+    {
+      "file": "logo-empresarial.png",
+      "source": "Logo original proporcionado por el usuario para el banner del Home y el bloque Migra a Empresarial RH.",
+      "processing": "Conservado sin modificaciones, con transparencia."
+    },
+    {
       "file": "Group-370-1.png",
       "source": "https://casistemas.com/wp-content/uploads/2026/01/Group-370-1.png"
     },
@@ -36,6 +121,11 @@
     {
       "file": "Logo-solo-de-ca-sistemas300.png",
       "source": "https://casistemas.com/wp-content/uploads/2024/09/Logo-solo-de-ca-sistemas300.png"
+    },
+    {
+      "file": "hero-equipo.png",
+      "source": "Imagen PNG original proporcionada por el usuario para el banner principal del Home.",
+      "processing": "Conservada sin modificaciones."
     },
     {
       "file": "hero.webp",
