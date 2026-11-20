@@ -25,6 +25,8 @@
       <span id="message-error" class="error">@if (invalid('message')) { {{ 'Cuéntanos qué necesitas.' | translate }} }</span>
     </div>
     <button type="submit" class="button button-gradient">{{ 'Enviar' | translate }}</button>
-    <p class="form-note" role="status">{{ (prepared() ? 'Tu consulta está lista. Confirma el envío en WhatsApp.' : 'Al enviar, continuarás en WhatsApp.') | translate }}</p>
+    @if (prepared()) {
+      <p class="form-note" role="status">{{ 'Tu consulta está lista. Confirma el envío en WhatsApp.' | translate }}</p>
+    }
   </form>
 </div>

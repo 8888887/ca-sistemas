@@ -1,5 +1,7 @@
 /** Spanish source text is the lookup key; product and company names stay unchanged. */
 export const EN_TRANSLATIONS: Readonly<Record<string, string>> = {
+  'Descarga CV': 'Download CV',
+  'Ver CV (PDF, abre en otra pestaña)': 'View CV (PDF, opens in a new tab)',
   'Blog de': 'Blog by',
   'Recursos para gestionar mejor tu equipo, tus procesos y tu tecnología.': 'Resources to better manage your team, your processes and your technology.',
   'Buscar artículos': 'Search articles',
@@ -721,7 +723,6 @@ export const EN_TRANSLATIONS: Readonly<Record<string, string>> = {
   'Cuéntanos qué necesitas.': 'Tell us what you need.',
   'Enviar': 'Send',
   'Tu consulta está lista. Confirma el envío en WhatsApp.': 'Your inquiry is ready. Confirm sending it in WhatsApp.',
-  'Al enviar, continuarás en WhatsApp.': 'Continue to WhatsApp to send your inquiry.',
   'Hola, soy {name} de {company}.': 'Hello, I am {name} from {company}.',
   'Celular: {phone}': 'Mobile: {phone}',
   'Consulta: {message}': 'Inquiry: {message}',

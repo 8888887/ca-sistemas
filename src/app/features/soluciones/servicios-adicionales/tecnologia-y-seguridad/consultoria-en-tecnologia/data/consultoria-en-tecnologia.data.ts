@@ -62,9 +62,9 @@ export const TECHNOLOGY_CONSULTING_BENEFITS: readonly ConsultingBenefit[] = [
 ];
 
 export const TECHNOLOGY_EXPERTS = [
-  { id: 'robert-palomino', name: 'Robert Palomino de la Gala Núñez', image: 'robert-palomino.png' },
-  { id: 'martin-vera', name: 'Martin Vera', image: 'martin-vera.png' },
-  { id: 'luis-madrid', name: 'Luis Madrid Guerra', image: 'luis-madrid.png' },
+  { id: 'robert-palomino', name: 'Robert Palomino de la Gala Núñez', image: 'robert-palomino.png', cv: '/documents/consultoria-en-tecnologia/ROBERT-CV.pdf' },
+  { id: 'martin-vera', name: 'Martin Vera', image: 'martin-vera.png', cv: '/documents/consultoria-en-tecnologia/MARTIN-CV.pdf' },
+  { id: 'luis-madrid', name: 'Luis Madrid Guerra', image: 'luis-madrid.png', cv: '/documents/consultoria-en-tecnologia/LUIS-CV.pdf' },
 ] as const;
 
 export const TECHNOLOGY_CONSULTING_FAQS: readonly FaqItem[] = [

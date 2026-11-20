@@ -5,6 +5,11 @@
       <li class="expert">
         <img [src]="assets + expert.image" [alt]="expert.name" width="45" height="45" loading="lazy">
         <h3>{{ expert.name }}</h3>
+        <a class="cv-button" [href]="expert.cv" target="_blank" rel="noopener noreferrer"
+          [attr.aria-label]="('Descarga CV' | translate) + ': ' + expert.name"
+          [title]="'Ver CV (PDF, abre en otra pestaña)' | translate">
+          {{ 'Descarga CV' | translate }}
+        </a>
       </li>
     }
   </ul>

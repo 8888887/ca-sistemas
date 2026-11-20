@@ -8,8 +8,10 @@ export const CONTACT = {
     'Av. El Polo 670 Of. 304 - Centro Comercial El Polo - Santiago de Surco - Lima - Perú',
   ],
   social: [
-    { label: 'Facebook', text: 'f', url: 'https://www.facebook.com/casistemasempresariales' },
-    { label: 'LinkedIn', text: 'in', url: 'https://www.linkedin.com/company/ca-sistemas-empresariales/' },
-    { label: 'YouTube', text: '▶', url: 'https://www.youtube.com/channel/UCIrIR65saJPXO2ADDsOYFDg' },
+    { label: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/casistemasempresariales' },
+    { label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/company/ca-sistemas-empresariales/' },
+    { label: 'YouTube', icon: 'youtube', url: 'https://www.youtube.com/channel/UCIrIR65saJPXO2ADDsOYFDg' },
+    { label: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/casistemasempresarial/' },
+    { label: 'TikTok', icon: 'tiktok', url: 'https://www.tiktok.com/@casistemas?_r=1&_t=ZM-926oc4pPtiV' },
   ],
 } as const;

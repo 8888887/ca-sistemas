@@ -21,7 +21,11 @@
       <a [href]="'mailto:' + contact.email + '?subject=Trabaja%20con%20nosotros'">{{ 'Trabaja con nosotros' | translate }}</a>
       <h2 class="social-title">{{ 'Redes' | translate }}</h2>
       <div class="social-links">
-        @for (social of contact.social; track social.label) { <a [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.label">{{ social.text }}</a> }
+        @for (social of contact.social; track social.label) {
+          <a [class.youtube]="social.icon === 'youtube'" [href]="social.url" target="_blank" rel="noopener noreferrer" [attr.aria-label]="social.label" [title]="social.label">
+            <app-icon [name]="social.icon" [filled]="true" />
+          </a>
+        }
       </div>
     </div>
     <p class="footer-tagline">{{ 'El mejor' | translate }} <span>Software</span> {{ 'para' | translate }}<br>{{ 'transformar' | translate }} <span>{{ 'tu negocio' | translate }}</span></p>

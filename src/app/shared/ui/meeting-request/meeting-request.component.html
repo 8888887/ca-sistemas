@@ -29,6 +29,8 @@
     </label>
     <span id="meeting-permission-error" class="field-error">@if (invalid('contactPermission')) { {{ 'Confirma que podemos contactarte.' | translate }} }</span>
     <button type="submit" class="button">{{ 'Agenda una reunión' | translate }}</button>
-    <p class="meeting-note" role="status">{{ (prepared() ? 'Tu consulta está lista. Confirma el envío en WhatsApp.' : 'Al enviar, continuarás en WhatsApp.') | translate }}</p>
+    @if (prepared()) {
+      <p class="meeting-note" role="status">{{ 'Tu consulta está lista. Confirma el envío en WhatsApp.' | translate }}</p>
+    }
   </form>
 </section>

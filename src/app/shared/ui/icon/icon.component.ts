@@ -9,5 +9,6 @@ import { ICON_PATHS, IconName } from './icon.data';
 })
 export class IconComponent {
   readonly name = input.required<IconName>();
+  readonly filled = input(false);
   protected readonly path = computed(() => ICON_PATHS[this.name()]);
 }
